@@ -1,0 +1,56 @@
+Last login: Sun Sep 13 16:18:38 on ttys003
+macbeee@macbees-mac ~ % kubectl get endpointslices -l kubernetes.io/service-name=ha-app-service -n zero-downtime-lab -w
+NAME                   ADDRESSTYPE   PORTS   ENDPOINTS                                       AGE
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   37m
+^C%                                                                                                     macbeee@macbees-mac ~ % kubectl get endpointslices -l kubernetes.io/service-name=ha-app-service -n zero-downtime-lab -w
+NAME                   ADDRESSTYPE   PORTS   ENDPOINTS                                       AGE
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   58m
+macbeee@macbees-mac ~ % kubectl get endpointslices -l kubernetes.io/service-name=ha-app-service -n zero-downtime-lab -w
+NAME                   ADDRESSTYPE   PORTS   ENDPOINTS                                       AGE
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   69m
+macbeee@macbees-mac ~ % kubectl get endpointslices -l kubernetes.io/service-name=ha-app-service -n zero-downtime-lab -w
+The connection to the server 192.168.139.197:6443 was refused - did you specify the right host or port?
+macbeee@macbees-mac ~ % kubectl get endpointslices -l kubernetes.io/service-name=ha-app-service -n zero-downtime-lab -w
+NAME                   ADDRESSTYPE   PORTS   ENDPOINTS                                       AGE
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   90m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 1 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 2 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 3 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 3 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.9,10.244.1.10 + 3 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.1.10,10.244.3.7 + 2 more...   91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 1 more...    91m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 1 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 1 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 2 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 3 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 3 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 3 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 3 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 3 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 4 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 5 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.7,10.244.3.9 + 4 more...    107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.9,10.244.1.17 + 3 more...   107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.9,10.244.1.17 + 3 more...   107m
+ha-app-service-8hwms   IPv4          80      10.244.3.6,10.244.3.9,10.244.1.17 + 3 more...   107m
+ha-app-service-8hwms   IPv4          80      10.244.3.9,10.244.1.17,10.244.1.14 + 2 more...   107m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 1 more...   107m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 1 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 2 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 3 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 3 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 3 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 3 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 3 more...   113m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 4 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.18 + 5 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.19 + 4 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.19 + 4 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.14,10.244.1.19 + 4 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.19,10.244.3.11 + 3 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.17,10.244.1.19,10.244.3.11 + 3 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.1.19,10.244.3.11,10.244.3.12 + 2 more...   114m
+ha-app-service-8hwms   IPv4          80      10.244.3.11,10.244.3.12,10.244.3.14 + 1 more...   114m
+^C%                                                                                                     macbeee@macbees-mac ~ % 

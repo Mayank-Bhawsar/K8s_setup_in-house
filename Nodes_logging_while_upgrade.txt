@@ -1,0 +1,131 @@
+Last login: Sun Sep 13 16:19:59 on ttys004
+macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-1   Ready    <none>          14h   v1.34.11
+k8s-worker-2   Ready    <none>          14h   v1.34.11
+k8s-worker-1   Ready    <none>          15h   v1.34.11
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   17h   v1.34.11
+k8s-worker-1   Ready    <none>          15h   v1.34.11
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS                     ROLES           AGE   VERSION
+k8s-cp         Ready,SchedulingDisabled   control-plane   18h   v1.34.11
+k8s-worker-1   Ready                      <none>          15h   v1.34.11
+k8s-worker-2   Ready                      <none>          15h   v1.34.11
+k8s-worker-1   Ready                      <none>          15h   v1.34.11
+k8s-cp         Ready,SchedulingDisabled   control-plane   18h   v1.35.8
+macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS                     ROLES           AGE   VERSION
+k8s-cp         Ready,SchedulingDisabled   control-plane   18h   v1.35.8
+k8s-worker-1   Ready                      <none>          15h   v1.34.11
+k8s-worker-2   Ready                      <none>          15h   v1.34.11
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.34.11
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.34.11
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.34.11
+k8s-worker-1   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-worker-1   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS                     ROLES           AGE   VERSION
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+k8s-worker-1   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-worker-2   Ready                      <none>          15h   v1.34.11
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS                     ROLES           AGE   VERSION
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+k8s-worker-1   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-worker-2   Ready                      <none>          15h   v1.34.11
+k8s-worker-1   Ready,SchedulingDisabled   <none>          15h   v1.35.8
+k8s-worker-1   Ready                      <none>          15h   v1.35.8
+k8s-worker-1   Ready                      <none>          15h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.34.11
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-worker-2   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-worker-1   Ready                      <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS                     ROLES           AGE   VERSION
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+k8s-worker-1   Ready                      <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled   <none>          15h   v1.34.11
+k8s-cp         Ready                      control-plane   18h   v1.35.8
+k8s-worker-2   NotReady,SchedulingDisabled   <none>          15h   v1.35.8
+k8s-worker-2   NotReady,SchedulingDisabled   <none>          15h   v1.35.8
+k8s-worker-2   NotReady,SchedulingDisabled   <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled      <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled      <none>          15h   v1.35.8
+k8s-worker-2   Ready,SchedulingDisabled      <none>          15h   v1.35.8
+k8s-worker-2   Ready                         <none>          15h   v1.35.8
+k8s-worker-2   Ready                         <none>          15h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % kubectl get nodes -w
+NAME           STATUS   ROLES           AGE   VERSION
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.35.8
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.35.8
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+k8s-worker-2   Ready    <none>          15h   v1.35.8
+k8s-cp         Ready    control-plane   18h   v1.35.8
+k8s-worker-1   Ready    <none>          15h   v1.35.8
+^C%                                                                                                  macbeee@macbees-mac ~ % 

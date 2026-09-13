@@ -1,0 +1,41 @@
+Last login: Sun Sep 13 12:34:26 on ttys000
+macbeee@macbees-mac ~ % cd /Users/macbeee/again/Projects/In-House_k8s_setup
+macbeee@macbees-mac In-House_k8s_setup % ./uptime-probe.sh
+==========================================================
+ Starting Zero-Downtime Traffic Harness
+ Target: http://192.168.139.142:30080
+ Polling Interval: ~100ms
+ Press [CTRL+C] at any time to stop and view final report
+==========================================================
+
+[16:13:37.3N] Total: 1050 | OK: 1050 (100%) | Last Latency: 5.1ms ^C
+==================== HARNESS SUMMARY ====================
+Total Requests Sent : 1052
+Successful (200 OK) : 1051
+Failed Requests     : 0
+Calculated Uptime   : 99.9049%
+=========================================================
+
+macbeee@macbees-mac In-House_k8s_setup % ./uptime-probe.sh
+==========================================================
+ Starting Zero-Downtime Traffic Harness
+ Target: http://192.168.139.142:30080
+ Polling Interval: ~100ms
+ Press [CTRL+C] at any time to stop and view final report
+==========================================================
+
+[17:30:52.3N] Total: 6260 | OK: 6260 (100%) | Last Latency: 375.7ms 
+[17:30:57.3N] ALERT: REQUEST FAILED! Status: 000 | Latency: 1004.2ms
+[17:36:05.3N] Total: 6840 | OK: 6839 (100%) | Last Latency: 372.0ms 
+[17:36:06.3N] ALERT: REQUEST FAILED! Status: 000 | Latency: 1003.1ms
+[17:36:38.3N] Total: 6900 | OK: 6898 (100%) | Last Latency: 370.7ms 
+[17:36:41.3N] ALERT: REQUEST FAILED! Status: 000 | Latency: 1002.9ms
+[17:44:32.3N] Total: 8710 | OK: 8707 (100%) | Last Latency: 4.5ms ^C
+==================== HARNESS SUMMARY ====================
+Total Requests Sent : 8716
+Successful (200 OK) : 8713
+Failed Requests     : 3
+Calculated Uptime   : 99.9656%
+=========================================================
+
+macbeee@macbees-mac In-House_k8s_setup % 

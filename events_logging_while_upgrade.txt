@@ -1,0 +1,416 @@
+Last login: Sun Sep 13 16:05:27 on ttys002
+macbeee@macbees-mac ~ % kubectl get events -n zero-downtime-lab --watch --output=custom-columns=\
+'TIME:.lastTimestamp,TYPE:.type,REASON:.reason,OBJECT:.involvedObject.name,MESSAGE:.message'
+TIME                   TYPE     REASON              OBJECT                    MESSAGE
+2026-09-13T10:22:12Z   Normal   Scheduled           ha-app-6d6d9bd96d-fpkht   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-fpkht to k8s-worker-1
+2026-09-13T10:22:13Z   Normal   Pulled              ha-app-6d6d9bd96d-fpkht   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal   Created             ha-app-6d6d9bd96d-fpkht   Created container: web
+2026-09-13T10:22:13Z   Normal   Started             ha-app-6d6d9bd96d-fpkht   Started container web
+2026-09-13T10:22:12Z   Normal   Scheduled           ha-app-6d6d9bd96d-prn9p   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-prn9p to k8s-worker-2
+2026-09-13T10:22:15Z   Normal   Pulled              ha-app-6d6d9bd96d-prn9p   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal   Created             ha-app-6d6d9bd96d-prn9p   Created container: web
+2026-09-13T10:22:15Z   Normal   Started             ha-app-6d6d9bd96d-prn9p   Started container web
+2026-09-13T10:22:12Z   Normal   Scheduled           ha-app-6d6d9bd96d-pssf7   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-pssf7 to k8s-worker-1
+2026-09-13T10:22:13Z   Normal   Pulled              ha-app-6d6d9bd96d-pssf7   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal   Created             ha-app-6d6d9bd96d-pssf7   Created container: web
+2026-09-13T10:22:13Z   Normal   Started             ha-app-6d6d9bd96d-pssf7   Started container web
+2026-09-13T10:22:12Z   Normal   Scheduled           ha-app-6d6d9bd96d-t4jjn   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-t4jjn to k8s-worker-2
+2026-09-13T10:22:15Z   Normal   Pulled              ha-app-6d6d9bd96d-t4jjn   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal   Created             ha-app-6d6d9bd96d-t4jjn   Created container: web
+2026-09-13T10:22:15Z   Normal   Started             ha-app-6d6d9bd96d-t4jjn   Started container web
+2026-09-13T10:22:12Z   Normal   SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:22:12Z   Normal   SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:22:12Z   Normal   SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:22:12Z   Normal   SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:22:12Z   Normal   NoPods              ha-app-pdb                No matching pods found
+2026-09-13T10:22:12Z   Normal   ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-6d6d9bd96d from 0 to 4
+2026-09-13T10:58:37Z   Normal   ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 0 to 1
+2026-09-13T10:58:37Z   Normal   ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 4 to 3
+2026-09-13T10:58:37Z   Normal   SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-dqq7s
+2026-09-13T10:58:37Z   Normal   SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:58:37Z   Normal   Scheduled           ha-app-549d7d78d-dqq7s    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-dqq7s to k8s-worker-1
+2026-09-13T10:58:37Z   Normal   ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 1 to 2
+2026-09-13T10:58:37Z   Normal   SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-5whzb
+2026-09-13T10:58:37Z   Normal   Scheduled           ha-app-549d7d78d-5whzb    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-5whzb to k8s-worker-2
+2026-09-13T10:58:37Z   Normal   Killing             ha-app-6d6d9bd96d-prn9p   Stopping container web
+2026-09-13T10:58:38Z   Normal   Pulled              ha-app-549d7d78d-5whzb    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:38Z   Normal   Created             ha-app-549d7d78d-5whzb    Created container: web
+2026-09-13T10:58:38Z   Normal   Started             ha-app-549d7d78d-5whzb    Started container web
+2026-09-13T10:58:40Z   Normal   ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 3 to 2
+2026-09-13T10:58:40Z   Normal   SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:58:40Z   Normal   ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 2 to 3
+2026-09-13T10:58:40Z   Normal   SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-bzplz
+2026-09-13T10:58:40Z   Normal   Scheduled           ha-app-549d7d78d-bzplz    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-bzplz to k8s-worker-1
+2026-09-13T10:58:40Z   Normal   Pulled              ha-app-549d7d78d-dqq7s    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:40Z   Normal   Created             ha-app-549d7d78d-dqq7s    Created container: web
+2026-09-13T10:58:40Z   Normal   Started             ha-app-549d7d78d-dqq7s    Started container web
+2026-09-13T10:58:40Z   Normal   Killing             ha-app-6d6d9bd96d-fpkht   Stopping container web
+2026-09-13T10:58:41Z   Normal   Pulled              ha-app-549d7d78d-bzplz    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:41Z   Normal   Created             ha-app-549d7d78d-bzplz    Created container: web
+2026-09-13T10:58:41Z   Normal   Started             ha-app-549d7d78d-bzplz    Started container web
+2026-09-13T10:58:42Z   Warning   Unhealthy           ha-app-6d6d9bd96d-prn9p   Readiness probe failed: Get "http://10.244.3.4:80/": dial tcp 10.244.3.4:80: connect: connection refused
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 2 to 1
+2026-09-13T10:58:44Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 3 to 4
+2026-09-13T10:58:44Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-447dr
+2026-09-13T10:58:44Z   Normal    Scheduled           ha-app-549d7d78d-447dr    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-447dr to k8s-worker-2
+2026-09-13T10:58:46Z   Normal    Pulled              ha-app-549d7d78d-447dr    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:46Z   Normal    Created             ha-app-549d7d78d-447dr    Created container: web
+2026-09-13T10:58:45Z   Normal    Killing             ha-app-6d6d9bd96d-pssf7   Stopping container web
+2026-09-13T10:58:46Z   Normal    Started             ha-app-549d7d78d-447dr    Started container web
+2026-09-13T10:58:47Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 1 to 0
+2026-09-13T10:58:47Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:58:47Z   Normal    Killing             ha-app-6d6d9bd96d-t4jjn   Stopping container web
+^C%                                                                                                                                         macbeee@macbees-mac ~ % kubectl get events -n zero-downtime-lab --watch --output=custom-columns=\
+'TIME:.lastTimestamp,TYPE:.type,REASON:.reason,OBJECT:.involvedObject.name,MESSAGE:.message'
+TIME                   TYPE      REASON              OBJECT                    MESSAGE
+2026-09-13T10:58:44Z   Normal    Scheduled           ha-app-549d7d78d-447dr    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-447dr to k8s-worker-2
+2026-09-13T10:58:46Z   Normal    Pulled              ha-app-549d7d78d-447dr    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:46Z   Normal    Created             ha-app-549d7d78d-447dr    Created container: web
+2026-09-13T10:58:46Z   Normal    Started             ha-app-549d7d78d-447dr    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-5whzb    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-5whzb to k8s-worker-2
+2026-09-13T10:58:38Z   Normal    Pulled              ha-app-549d7d78d-5whzb    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:38Z   Normal    Created             ha-app-549d7d78d-5whzb    Created container: web
+2026-09-13T10:58:38Z   Normal    Started             ha-app-549d7d78d-5whzb    Started container web
+2026-09-13T10:58:40Z   Normal    Scheduled           ha-app-549d7d78d-bzplz    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-bzplz to k8s-worker-1
+2026-09-13T10:58:41Z   Normal    Pulled              ha-app-549d7d78d-bzplz    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:41Z   Normal    Created             ha-app-549d7d78d-bzplz    Created container: web
+2026-09-13T10:58:41Z   Normal    Started             ha-app-549d7d78d-bzplz    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-dqq7s    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-dqq7s to k8s-worker-1
+2026-09-13T10:58:40Z   Normal    Pulled              ha-app-549d7d78d-dqq7s    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:40Z   Normal    Created             ha-app-549d7d78d-dqq7s    Created container: web
+2026-09-13T10:58:40Z   Normal    Started             ha-app-549d7d78d-dqq7s    Started container web
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-dqq7s
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-5whzb
+2026-09-13T10:58:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-bzplz
+2026-09-13T10:58:44Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-447dr
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-fpkht   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-fpkht to k8s-worker-1
+2026-09-13T10:22:13Z   Normal    Pulled              ha-app-6d6d9bd96d-fpkht   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal    Created             ha-app-6d6d9bd96d-fpkht   Created container: web
+2026-09-13T10:22:13Z   Normal    Started             ha-app-6d6d9bd96d-fpkht   Started container web
+2026-09-13T10:58:40Z   Normal    Killing             ha-app-6d6d9bd96d-fpkht   Stopping container web
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-prn9p   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-prn9p to k8s-worker-2
+2026-09-13T10:22:15Z   Normal    Pulled              ha-app-6d6d9bd96d-prn9p   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal    Created             ha-app-6d6d9bd96d-prn9p   Created container: web
+2026-09-13T10:22:15Z   Normal    Started             ha-app-6d6d9bd96d-prn9p   Started container web
+2026-09-13T10:58:37Z   Normal    Killing             ha-app-6d6d9bd96d-prn9p   Stopping container web
+2026-09-13T10:58:42Z   Warning   Unhealthy           ha-app-6d6d9bd96d-prn9p   Readiness probe failed: Get "http://10.244.3.4:80/": dial tcp 10.244.3.4:80: connect: connection refused
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-pssf7   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-pssf7 to k8s-worker-1
+2026-09-13T10:22:13Z   Normal    Pulled              ha-app-6d6d9bd96d-pssf7   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal    Created             ha-app-6d6d9bd96d-pssf7   Created container: web
+2026-09-13T10:22:13Z   Normal    Started             ha-app-6d6d9bd96d-pssf7   Started container web
+2026-09-13T10:58:45Z   Normal    Killing             ha-app-6d6d9bd96d-pssf7   Stopping container web
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-t4jjn   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-t4jjn to k8s-worker-2
+2026-09-13T10:22:15Z   Normal    Pulled              ha-app-6d6d9bd96d-t4jjn   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal    Created             ha-app-6d6d9bd96d-t4jjn   Created container: web
+2026-09-13T10:22:15Z   Normal    Started             ha-app-6d6d9bd96d-t4jjn   Started container web
+2026-09-13T10:58:47Z   Normal    Killing             ha-app-6d6d9bd96d-t4jjn   Stopping container web
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:58:37Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:58:40Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:58:44Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:58:47Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:22:12Z   Normal    NoPods              ha-app-pdb                No matching pods found
+2026-09-13T10:22:12Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-6d6d9bd96d from 0 to 4
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 0 to 1
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 4 to 3
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 1 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 3 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 2 to 3
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 2 to 1
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 3 to 4
+2026-09-13T10:58:47Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 1 to 0
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-fpkht   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-fpkht to k8s-worker-1
+2026-09-13T10:22:13Z   Normal    Pulled              ha-app-6d6d9bd96d-fpkht   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal    Created             ha-app-6d6d9bd96d-fpkht   Created container: web
+2026-09-13T10:22:13Z   Normal    Started             ha-app-6d6d9bd96d-fpkht   Started container web
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-prn9p   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-prn9p to k8s-worker-2
+2026-09-13T10:22:15Z   Normal    Pulled              ha-app-6d6d9bd96d-prn9p   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal    Created             ha-app-6d6d9bd96d-prn9p   Created container: web
+2026-09-13T10:22:15Z   Normal    Started             ha-app-6d6d9bd96d-prn9p   Started container web
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-pssf7   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-pssf7 to k8s-worker-1
+2026-09-13T10:22:13Z   Normal    Pulled              ha-app-6d6d9bd96d-pssf7   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:13Z   Normal    Created             ha-app-6d6d9bd96d-pssf7   Created container: web
+2026-09-13T10:22:13Z   Normal    Started             ha-app-6d6d9bd96d-pssf7   Started container web
+2026-09-13T10:22:12Z   Normal    Scheduled           ha-app-6d6d9bd96d-t4jjn   Successfully assigned zero-downtime-lab/ha-app-6d6d9bd96d-t4jjn to k8s-worker-2
+2026-09-13T10:22:15Z   Normal    Pulled              ha-app-6d6d9bd96d-t4jjn   Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:22:15Z   Normal    Created             ha-app-6d6d9bd96d-t4jjn   Created container: web
+2026-09-13T10:22:15Z   Normal    Started             ha-app-6d6d9bd96d-t4jjn   Started container web
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:22:12Z   Normal    SuccessfulCreate    ha-app-6d6d9bd96d         Created pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:22:12Z   Normal    NoPods              ha-app-pdb                No matching pods found
+2026-09-13T10:22:12Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-6d6d9bd96d from 0 to 4
+macbeee@macbees-mac ~ % kubectl get events -n zero-downtime-lab --watch --output=custom-columns=\
+'TIME:.lastTimestamp,TYPE:.type,REASON:.reason,OBJECT:.involvedObject.name,MESSAGE:.message'
+TIME                   TYPE      REASON              OBJECT                    MESSAGE
+2026-09-13T10:58:44Z   Normal    Scheduled           ha-app-549d7d78d-447dr    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-447dr to k8s-worker-2
+2026-09-13T10:58:46Z   Normal    Pulled              ha-app-549d7d78d-447dr    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:46Z   Normal    Created             ha-app-549d7d78d-447dr    Created container: web
+2026-09-13T10:58:46Z   Normal    Started             ha-app-549d7d78d-447dr    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-5whzb    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-5whzb to k8s-worker-2
+2026-09-13T10:58:38Z   Normal    Pulled              ha-app-549d7d78d-5whzb    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:38Z   Normal    Created             ha-app-549d7d78d-5whzb    Created container: web
+2026-09-13T10:58:38Z   Normal    Started             ha-app-549d7d78d-5whzb    Started container web
+2026-09-13T10:58:40Z   Normal    Scheduled           ha-app-549d7d78d-bzplz    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-bzplz to k8s-worker-1
+2026-09-13T10:58:41Z   Normal    Pulled              ha-app-549d7d78d-bzplz    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:41Z   Normal    Created             ha-app-549d7d78d-bzplz    Created container: web
+2026-09-13T10:58:41Z   Normal    Started             ha-app-549d7d78d-bzplz    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-dqq7s    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-dqq7s to k8s-worker-1
+2026-09-13T10:58:40Z   Normal    Pulled              ha-app-549d7d78d-dqq7s    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:40Z   Normal    Created             ha-app-549d7d78d-dqq7s    Created container: web
+2026-09-13T10:58:40Z   Normal    Started             ha-app-549d7d78d-dqq7s    Started container web
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-dqq7s
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-5whzb
+2026-09-13T10:58:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-bzplz
+2026-09-13T10:58:44Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-447dr
+2026-09-13T10:58:40Z   Normal    Killing             ha-app-6d6d9bd96d-fpkht   Stopping container web
+2026-09-13T10:58:37Z   Normal    Killing             ha-app-6d6d9bd96d-prn9p   Stopping container web
+2026-09-13T10:58:42Z   Warning   Unhealthy           ha-app-6d6d9bd96d-prn9p   Readiness probe failed: Get "http://10.244.3.4:80/": dial tcp 10.244.3.4:80: connect: connection refused
+2026-09-13T10:58:45Z   Normal    Killing             ha-app-6d6d9bd96d-pssf7   Stopping container web
+2026-09-13T10:58:47Z   Normal    Killing             ha-app-6d6d9bd96d-t4jjn   Stopping container web
+2026-09-13T10:58:37Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:58:40Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:58:44Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:58:47Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 0 to 1
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 4 to 3
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 1 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 3 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 2 to 3
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 2 to 1
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 3 to 4
+2026-09-13T10:58:47Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 1 to 0
+macbeee@macbees-mac ~ % kubectl get events -n zero-downtime-lab --watch --output=custom-columns=\
+'TIME:.lastTimestamp,TYPE:.type,REASON:.reason,OBJECT:.involvedObject.name,MESSAGE:.message'
+TIME                   TYPE      REASON              OBJECT                    MESSAGE
+2026-09-13T10:58:44Z   Normal    Scheduled           ha-app-549d7d78d-447dr    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-447dr to k8s-worker-2
+2026-09-13T10:58:46Z   Normal    Pulled              ha-app-549d7d78d-447dr    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:46Z   Normal    Created             ha-app-549d7d78d-447dr    Created container: web
+2026-09-13T10:58:46Z   Normal    Started             ha-app-549d7d78d-447dr    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-5whzb    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-5whzb to k8s-worker-2
+2026-09-13T10:58:38Z   Normal    Pulled              ha-app-549d7d78d-5whzb    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:38Z   Normal    Created             ha-app-549d7d78d-5whzb    Created container: web
+2026-09-13T10:58:38Z   Normal    Started             ha-app-549d7d78d-5whzb    Started container web
+2026-09-13T10:58:40Z   Normal    Scheduled           ha-app-549d7d78d-bzplz    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-bzplz to k8s-worker-1
+2026-09-13T10:58:41Z   Normal    Pulled              ha-app-549d7d78d-bzplz    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:41Z   Normal    Created             ha-app-549d7d78d-bzplz    Created container: web
+2026-09-13T10:58:41Z   Normal    Started             ha-app-549d7d78d-bzplz    Started container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-dqq7s    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-dqq7s to k8s-worker-1
+2026-09-13T10:58:40Z   Normal    Pulled              ha-app-549d7d78d-dqq7s    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:40Z   Normal    Created             ha-app-549d7d78d-dqq7s    Created container: web
+2026-09-13T10:58:40Z   Normal    Started             ha-app-549d7d78d-dqq7s    Started container web
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-dqq7s
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-5whzb
+2026-09-13T10:58:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-bzplz
+2026-09-13T10:58:44Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-447dr
+2026-09-13T10:58:40Z   Normal    Killing             ha-app-6d6d9bd96d-fpkht   Stopping container web
+2026-09-13T10:58:37Z   Normal    Killing             ha-app-6d6d9bd96d-prn9p   Stopping container web
+2026-09-13T10:58:42Z   Warning   Unhealthy           ha-app-6d6d9bd96d-prn9p   Readiness probe failed: Get "http://10.244.3.4:80/": dial tcp 10.244.3.4:80: connect: connection refused
+2026-09-13T10:58:45Z   Normal    Killing             ha-app-6d6d9bd96d-pssf7   Stopping container web
+2026-09-13T10:58:47Z   Normal    Killing             ha-app-6d6d9bd96d-t4jjn   Stopping container web
+2026-09-13T10:58:37Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:58:40Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:58:44Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:58:47Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 0 to 1
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 4 to 3
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 1 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 3 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 2 to 3
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 2 to 1
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 3 to 4
+2026-09-13T10:58:47Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 1 to 0
+2026-09-13T11:53:31Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-sckrp
+2026-09-13T11:53:31Z   Normal    Scheduled           ha-app-549d7d78d-sckrp    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-sckrp to k8s-worker-2
+2026-09-13T11:53:32Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-97nsq
+2026-09-13T11:53:32Z   Normal    Scheduled           ha-app-549d7d78d-97nsq    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-97nsq to k8s-worker-2
+2026-09-13T11:53:33Z   Normal    Pulled              ha-app-549d7d78d-sckrp    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T11:53:33Z   Normal    Created             ha-app-549d7d78d-sckrp    Created container: web
+2026-09-13T11:53:33Z   Normal    Started             ha-app-549d7d78d-sckrp    Started container web
+2026-09-13T11:53:34Z   Normal    Pulled              ha-app-549d7d78d-97nsq    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T11:53:34Z   Normal    Created             ha-app-549d7d78d-97nsq    Created container: web
+2026-09-13T11:53:34Z   Normal    Started             ha-app-549d7d78d-97nsq    Started container web
+2026-09-13T11:53:34Z   Normal    Killing             ha-app-549d7d78d-dqq7s    Stopping container web
+2026-09-13T11:53:35Z   Normal    Killing             ha-app-549d7d78d-bzplz    Stopping container web
+2026-09-13T12:09:39Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-xk285
+2026-09-13T12:09:39Z   Normal    Scheduled           ha-app-549d7d78d-xk285    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-xk285 to k8s-worker-1
+2026-09-13T12:09:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-8mzlc
+2026-09-13T12:09:40Z   Normal    Scheduled           ha-app-549d7d78d-8mzlc    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-8mzlc to k8s-worker-1
+2026-09-13T12:09:40Z   Normal    Killing             ha-app-549d7d78d-447dr    Stopping container web
+2026-09-13T12:09:40Z   Normal    Killing             ha-app-549d7d78d-97nsq    Stopping container web
+2026-09-13T12:09:41Z   Normal    Pulled              ha-app-549d7d78d-xk285    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:41Z   Normal    Pulled              ha-app-549d7d78d-8mzlc    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:41Z   Normal    Created             ha-app-549d7d78d-xk285    Container created
+2026-09-13T12:09:41Z   Normal    Created             ha-app-549d7d78d-8mzlc    Container created
+2026-09-13T12:09:41Z   Normal    Started             ha-app-549d7d78d-xk285    Container started
+2026-09-13T12:09:41Z   Normal    Started             ha-app-549d7d78d-8mzlc    Container started
+2026-09-13T12:09:45Z   Normal    Killing             ha-app-549d7d78d-5whzb    Stopping container web
+2026-09-13T12:09:45Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-mxgph
+2026-09-13T12:09:45Z   Normal    Scheduled           ha-app-549d7d78d-mxgph    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-mxgph to k8s-worker-1
+2026-09-13T12:09:45Z   Normal    Pulled              ha-app-549d7d78d-mxgph    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:45Z   Normal    Created             ha-app-549d7d78d-mxgph    Container created
+2026-09-13T12:09:45Z   Normal    Killing             ha-app-549d7d78d-sckrp    Stopping container web
+2026-09-13T12:09:45Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-nhkq9
+2026-09-13T12:09:45Z   Normal    Scheduled           ha-app-549d7d78d-nhkq9    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-nhkq9 to k8s-worker-1
+2026-09-13T12:09:45Z   Normal    Started             ha-app-549d7d78d-mxgph    Container started
+2026-09-13T12:09:46Z   Warning   Unhealthy           ha-app-549d7d78d-447dr    Readiness probe failed: Get "http://10.244.3.7:80/": dial tcp 10.244.3.7:80: connect: connection refused
+2026-09-13T12:09:46Z   Normal    Pulled              ha-app-549d7d78d-nhkq9    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:46Z   Normal    Created             ha-app-549d7d78d-nhkq9    Container created
+2026-09-13T12:09:46Z   Normal    Started             ha-app-549d7d78d-nhkq9    Container started
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 0 to 1
+2026-09-13T12:16:07Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-7nzpq
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 4 to 3
+2026-09-13T12:16:07Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-mxgph
+2026-09-13T12:16:07Z   Normal    Scheduled           ha-app-5947464b7c-7nzpq   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-7nzpq to k8s-worker-2
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 1 to 2
+2026-09-13T12:16:07Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-rmx2w
+2026-09-13T12:16:07Z   Normal    Scheduled           ha-app-5947464b7c-rmx2w   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-rmx2w to k8s-worker-2
+2026-09-13T12:16:07Z   Normal    Killing             ha-app-549d7d78d-mxgph    Stopping container web
+2026-09-13T12:16:08Z   Normal    Pulled              ha-app-5947464b7c-7nzpq   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:08Z   Normal    Pulled              ha-app-5947464b7c-rmx2w   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:08Z   Normal    Created             ha-app-5947464b7c-7nzpq   Container created
+2026-09-13T12:16:08Z   Normal    Created             ha-app-5947464b7c-rmx2w   Container created
+2026-09-13T12:16:08Z   Normal    Started             ha-app-5947464b7c-rmx2w   Container started
+2026-09-13T12:16:08Z   Normal    Started             ha-app-5947464b7c-7nzpq   Container started
+2026-09-13T12:16:10Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 3 to 2
+2026-09-13T12:16:10Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-xk285
+2026-09-13T12:16:10Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 2 to 3
+2026-09-13T12:16:10Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-fg2md
+2026-09-13T12:16:10Z   Normal    Scheduled           ha-app-5947464b7c-fg2md   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-fg2md to k8s-worker-2
+2026-09-13T12:16:11Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 2 to 1
+2026-09-13T12:16:11Z   Normal    Killing             ha-app-549d7d78d-xk285    Stopping container web
+2026-09-13T12:16:11Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-8mzlc
+2026-09-13T12:16:11Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 3 to 4
+2026-09-13T12:16:11Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-fckcj
+2026-09-13T12:16:11Z   Normal    Scheduled           ha-app-5947464b7c-fckcj   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-fckcj to k8s-worker-2
+2026-09-13T12:16:12Z   Normal    Pulled              ha-app-5947464b7c-fckcj   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:12Z   Normal    Created             ha-app-5947464b7c-fckcj   Container created
+2026-09-13T12:16:12Z   Normal    Pulled              ha-app-5947464b7c-fg2md   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:12Z   Normal    Started             ha-app-5947464b7c-fckcj   Container started
+2026-09-13T12:16:12Z   Normal    Created             ha-app-5947464b7c-fg2md   Container created
+2026-09-13T12:16:12Z   Normal    Killing             ha-app-549d7d78d-8mzlc    Stopping container web
+2026-09-13T12:16:12Z   Normal    Started             ha-app-5947464b7c-fg2md   Container started
+2026-09-13T12:16:16Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 1 to 0
+2026-09-13T12:16:16Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-nhkq9
+2026-09-13T12:16:16Z   Normal    Killing             ha-app-549d7d78d-nhkq9    Stopping container web
+2026-09-13T12:16:21Z   Warning   Unhealthy           ha-app-549d7d78d-nhkq9    Readiness probe failed: Get "http://10.244.1.19:80/": dial tcp 10.244.1.19:80: connect: connection refused
+^C%                                                                                                                                         macbeee@macbees-mac ~ % kubectl get events -n zero-downtime-lab --watch --output=custom-columns=\
+'TIME:.lastTimestamp,TYPE:.type,REASON:.reason,OBJECT:.involvedObject.name,MESSAGE:.message'
+TIME                   TYPE      REASON              OBJECT                    MESSAGE
+2026-09-13T10:58:44Z   Normal    Scheduled           ha-app-549d7d78d-447dr    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-447dr to k8s-worker-2
+2026-09-13T10:58:46Z   Normal    Pulled              ha-app-549d7d78d-447dr    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:46Z   Normal    Created             ha-app-549d7d78d-447dr    Created container: web
+2026-09-13T10:58:46Z   Normal    Started             ha-app-549d7d78d-447dr    Started container web
+2026-09-13T12:09:40Z   Normal    Killing             ha-app-549d7d78d-447dr    Stopping container web
+2026-09-13T12:09:46Z   Warning   Unhealthy           ha-app-549d7d78d-447dr    Readiness probe failed: Get "http://10.244.3.7:80/": dial tcp 10.244.3.7:80: connect: connection refused
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-5whzb    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-5whzb to k8s-worker-2
+2026-09-13T10:58:38Z   Normal    Pulled              ha-app-549d7d78d-5whzb    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:38Z   Normal    Created             ha-app-549d7d78d-5whzb    Created container: web
+2026-09-13T10:58:38Z   Normal    Started             ha-app-549d7d78d-5whzb    Started container web
+2026-09-13T12:09:45Z   Normal    Killing             ha-app-549d7d78d-5whzb    Stopping container web
+2026-09-13T12:09:40Z   Normal    Scheduled           ha-app-549d7d78d-8mzlc    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-8mzlc to k8s-worker-1
+2026-09-13T12:09:41Z   Normal    Pulled              ha-app-549d7d78d-8mzlc    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:41Z   Normal    Created             ha-app-549d7d78d-8mzlc    Container created
+2026-09-13T12:09:41Z   Normal    Started             ha-app-549d7d78d-8mzlc    Container started
+2026-09-13T12:16:12Z   Normal    Killing             ha-app-549d7d78d-8mzlc    Stopping container web
+2026-09-13T11:53:32Z   Normal    Scheduled           ha-app-549d7d78d-97nsq    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-97nsq to k8s-worker-2
+2026-09-13T11:53:34Z   Normal    Pulled              ha-app-549d7d78d-97nsq    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T11:53:34Z   Normal    Created             ha-app-549d7d78d-97nsq    Created container: web
+2026-09-13T11:53:34Z   Normal    Started             ha-app-549d7d78d-97nsq    Started container web
+2026-09-13T12:09:40Z   Normal    Killing             ha-app-549d7d78d-97nsq    Stopping container web
+2026-09-13T10:58:40Z   Normal    Scheduled           ha-app-549d7d78d-bzplz    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-bzplz to k8s-worker-1
+2026-09-13T10:58:41Z   Normal    Pulled              ha-app-549d7d78d-bzplz    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:41Z   Normal    Created             ha-app-549d7d78d-bzplz    Created container: web
+2026-09-13T10:58:41Z   Normal    Started             ha-app-549d7d78d-bzplz    Started container web
+2026-09-13T11:53:35Z   Normal    Killing             ha-app-549d7d78d-bzplz    Stopping container web
+2026-09-13T10:58:37Z   Normal    Scheduled           ha-app-549d7d78d-dqq7s    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-dqq7s to k8s-worker-1
+2026-09-13T10:58:40Z   Normal    Pulled              ha-app-549d7d78d-dqq7s    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T10:58:40Z   Normal    Created             ha-app-549d7d78d-dqq7s    Created container: web
+2026-09-13T10:58:40Z   Normal    Started             ha-app-549d7d78d-dqq7s    Started container web
+2026-09-13T11:53:34Z   Normal    Killing             ha-app-549d7d78d-dqq7s    Stopping container web
+2026-09-13T12:09:45Z   Normal    Scheduled           ha-app-549d7d78d-mxgph    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-mxgph to k8s-worker-1
+2026-09-13T12:09:45Z   Normal    Pulled              ha-app-549d7d78d-mxgph    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:45Z   Normal    Created             ha-app-549d7d78d-mxgph    Container created
+2026-09-13T12:09:45Z   Normal    Started             ha-app-549d7d78d-mxgph    Container started
+2026-09-13T12:16:07Z   Normal    Killing             ha-app-549d7d78d-mxgph    Stopping container web
+2026-09-13T12:09:45Z   Normal    Scheduled           ha-app-549d7d78d-nhkq9    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-nhkq9 to k8s-worker-1
+2026-09-13T12:09:46Z   Normal    Pulled              ha-app-549d7d78d-nhkq9    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:46Z   Normal    Created             ha-app-549d7d78d-nhkq9    Container created
+2026-09-13T12:09:46Z   Normal    Started             ha-app-549d7d78d-nhkq9    Container started
+2026-09-13T12:16:16Z   Normal    Killing             ha-app-549d7d78d-nhkq9    Stopping container web
+2026-09-13T12:16:21Z   Warning   Unhealthy           ha-app-549d7d78d-nhkq9    Readiness probe failed: Get "http://10.244.1.19:80/": dial tcp 10.244.1.19:80: connect: connection refused
+2026-09-13T11:53:31Z   Normal    Scheduled           ha-app-549d7d78d-sckrp    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-sckrp to k8s-worker-2
+2026-09-13T11:53:33Z   Normal    Pulled              ha-app-549d7d78d-sckrp    Container image "nginx:1.27-alpine" already present on machine
+2026-09-13T11:53:33Z   Normal    Created             ha-app-549d7d78d-sckrp    Created container: web
+2026-09-13T11:53:33Z   Normal    Started             ha-app-549d7d78d-sckrp    Started container web
+2026-09-13T12:09:45Z   Normal    Killing             ha-app-549d7d78d-sckrp    Stopping container web
+2026-09-13T12:09:39Z   Normal    Scheduled           ha-app-549d7d78d-xk285    Successfully assigned zero-downtime-lab/ha-app-549d7d78d-xk285 to k8s-worker-1
+2026-09-13T12:09:41Z   Normal    Pulled              ha-app-549d7d78d-xk285    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:09:41Z   Normal    Created             ha-app-549d7d78d-xk285    Container created
+2026-09-13T12:09:41Z   Normal    Started             ha-app-549d7d78d-xk285    Container started
+2026-09-13T12:16:11Z   Normal    Killing             ha-app-549d7d78d-xk285    Stopping container web
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-dqq7s
+2026-09-13T10:58:37Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-5whzb
+2026-09-13T10:58:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-bzplz
+2026-09-13T10:58:44Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-447dr
+2026-09-13T11:53:31Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-sckrp
+2026-09-13T11:53:32Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-97nsq
+2026-09-13T12:09:39Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-xk285
+2026-09-13T12:09:40Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-8mzlc
+2026-09-13T12:09:45Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-mxgph
+2026-09-13T12:09:45Z   Normal    SuccessfulCreate    ha-app-549d7d78d          Created pod: ha-app-549d7d78d-nhkq9
+2026-09-13T12:16:07Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-mxgph
+2026-09-13T12:16:10Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-xk285
+2026-09-13T12:16:11Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-8mzlc
+2026-09-13T12:16:16Z   Normal    SuccessfulDelete    ha-app-549d7d78d          Deleted pod: ha-app-549d7d78d-nhkq9
+2026-09-13T12:16:07Z   Normal    Scheduled           ha-app-5947464b7c-7nzpq   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-7nzpq to k8s-worker-2
+2026-09-13T12:16:08Z   Normal    Pulled              ha-app-5947464b7c-7nzpq   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:08Z   Normal    Created             ha-app-5947464b7c-7nzpq   Container created
+2026-09-13T12:16:08Z   Normal    Started             ha-app-5947464b7c-7nzpq   Container started
+2026-09-13T12:16:11Z   Normal    Scheduled           ha-app-5947464b7c-fckcj   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-fckcj to k8s-worker-2
+2026-09-13T12:16:12Z   Normal    Pulled              ha-app-5947464b7c-fckcj   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:12Z   Normal    Created             ha-app-5947464b7c-fckcj   Container created
+2026-09-13T12:16:12Z   Normal    Started             ha-app-5947464b7c-fckcj   Container started
+2026-09-13T12:16:10Z   Normal    Scheduled           ha-app-5947464b7c-fg2md   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-fg2md to k8s-worker-2
+2026-09-13T12:16:12Z   Normal    Pulled              ha-app-5947464b7c-fg2md   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:12Z   Normal    Created             ha-app-5947464b7c-fg2md   Container created
+2026-09-13T12:16:12Z   Normal    Started             ha-app-5947464b7c-fg2md   Container started
+2026-09-13T12:16:07Z   Normal    Scheduled           ha-app-5947464b7c-rmx2w   Successfully assigned zero-downtime-lab/ha-app-5947464b7c-rmx2w to k8s-worker-2
+2026-09-13T12:16:08Z   Normal    Pulled              ha-app-5947464b7c-rmx2w   Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+2026-09-13T12:16:08Z   Normal    Created             ha-app-5947464b7c-rmx2w   Container created
+2026-09-13T12:16:08Z   Normal    Started             ha-app-5947464b7c-rmx2w   Container started
+2026-09-13T12:16:07Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-7nzpq
+2026-09-13T12:16:07Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-rmx2w
+2026-09-13T12:16:10Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-fg2md
+2026-09-13T12:16:11Z   Normal    SuccessfulCreate    ha-app-5947464b7c         Created pod: ha-app-5947464b7c-fckcj
+2026-09-13T10:58:40Z   Normal    Killing             ha-app-6d6d9bd96d-fpkht   Stopping container web
+2026-09-13T10:58:37Z   Normal    Killing             ha-app-6d6d9bd96d-prn9p   Stopping container web
+2026-09-13T10:58:42Z   Warning   Unhealthy           ha-app-6d6d9bd96d-prn9p   Readiness probe failed: Get "http://10.244.3.4:80/": dial tcp 10.244.3.4:80: connect: connection refused
+2026-09-13T10:58:45Z   Normal    Killing             ha-app-6d6d9bd96d-pssf7   Stopping container web
+2026-09-13T10:58:47Z   Normal    Killing             ha-app-6d6d9bd96d-t4jjn   Stopping container web
+2026-09-13T10:58:37Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-prn9p
+2026-09-13T10:58:40Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-fpkht
+2026-09-13T10:58:44Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-pssf7
+2026-09-13T10:58:47Z   Normal    SuccessfulDelete    ha-app-6d6d9bd96d         Deleted pod: ha-app-6d6d9bd96d-t4jjn
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 0 to 1
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 4 to 3
+2026-09-13T10:58:37Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 1 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 3 to 2
+2026-09-13T10:58:40Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 2 to 3
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 2 to 1
+2026-09-13T10:58:44Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-549d7d78d from 3 to 4
+2026-09-13T10:58:47Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-6d6d9bd96d from 1 to 0
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 0 to 1
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 4 to 3
+2026-09-13T12:16:07Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 1 to 2
+2026-09-13T12:16:10Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 3 to 2
+2026-09-13T12:16:10Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 2 to 3
+2026-09-13T12:16:11Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 2 to 1
+2026-09-13T12:16:11Z   Normal    ScalingReplicaSet   ha-app                    Scaled up replica set ha-app-5947464b7c from 3 to 4
+2026-09-13T12:16:16Z   Normal    ScalingReplicaSet   ha-app                    Scaled down replica set ha-app-549d7d78d from 1 to 0
+^C%                                                                                                                                         macbeee@macbees-mac ~ % 

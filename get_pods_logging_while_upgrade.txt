@@ -1,0 +1,217 @@
+Last login: Sun Sep 13 16:05:15 on ttys000
+macbeee@macbees-mac ~ % cd /Users/macbeee/again/Projects/In-House_k8s_setup
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                      READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+ha-app-6d6d9bd96d-fpkht   1/1     Running   0          15m   10.244.1.8   k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-prn9p   1/1     Running   0          15m   10.244.3.4   k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   1/1     Running   0          15m   10.244.1.7   k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   1/1     Running   0          15m   10.244.3.5   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s    0/1     Pending   0          0s    <none>       <none>         <none>           <none>
+ha-app-6d6d9bd96d-prn9p   1/1     Terminating   0          36m   10.244.3.4   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s    0/1     Pending       0          0s    <none>       k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-5whzb    0/1     Pending       0          0s    <none>       <none>         <none>           <none>
+ha-app-549d7d78d-5whzb    0/1     Pending       0          0s    <none>       k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s    0/1     ContainerCreating   0          0s    <none>       k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-prn9p   1/1     Terminating         0          36m   10.244.3.4   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb    0/1     ContainerCreating   0          0s    <none>       k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb    0/1     Running             0          2s    10.244.3.6   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb    1/1     Running             0          3s    10.244.3.6   k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-fpkht   1/1     Terminating         0          36m   10.244.1.8   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz    0/1     Pending             0          0s    <none>       <none>         <none>           <none>
+ha-app-549d7d78d-bzplz    0/1     Pending             0          0s    <none>       k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s    0/1     Running             0          4s    10.244.1.9   k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-fpkht   1/1     Terminating         0          36m   10.244.1.8   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz    0/1     ContainerCreating   0          1s    <none>       k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz    0/1     Running             0          1s    10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-prn9p   0/1     Completed           0          36m   10.244.3.4    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s    1/1     Running             0          7s    10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   1/1     Terminating         0          36m   10.244.1.7    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-447dr    0/1     Pending             0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-447dr    0/1     Pending             0          0s    <none>        k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-prn9p   0/1     Completed           0          36m   10.244.3.4    k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-prn9p   0/1     Completed           0          36m   10.244.3.4    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz    1/1     Running             0          7s    10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-447dr    0/1     ContainerCreating   0          3s    <none>        k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   1/1     Terminating         0          36m   10.244.3.5    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr    0/1     Running             0          3s    10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   1/1     Terminating         0          36m   10.244.3.5    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr    1/1     Running             0          4s    10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-fpkht   0/1     Completed           0          36m   10.244.1.8    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-fpkht   0/1     Completed           0          36m   10.244.1.8    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-fpkht   0/1     Completed           0          36m   10.244.1.8    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   1/1     Terminating         0          36m   10.244.1.7    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   0/1     Completed           0          36m   10.244.1.7    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   0/1     Completed           0          36m   10.244.1.7    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-pssf7   0/1     Completed           0          36m   10.244.1.7    k8s-worker-1   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   0/1     Completed           0          36m   10.244.3.5    k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   0/1     Completed           0          36m   10.244.3.5    k8s-worker-2   <none>           <none>
+ha-app-6d6d9bd96d-t4jjn   0/1     Completed           0          36m   10.244.3.5    k8s-worker-2   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          34s   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          41s   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Running   0          38s   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Running   0          41s   10.244.1.9    k8s-worker-1   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          22m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          22m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Running   0          22m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Running   0          22m   10.244.1.9    k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          33m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          33m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Running   0          33m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Running   0          33m   10.244.1.9    k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+The connection to the server 192.168.139.197:6443 was refused - did you specify the right host or port?
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          53m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          53m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Running   0          53m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Running   0          53m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Running   0          54m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Terminating   0          54m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Pending       0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Pending       0          0s    <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Running       0          54m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Terminating   0          54m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Pending       0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Pending       0          0s    <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     ContainerCreating   0          1s    <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     ContainerCreating   0          1s    <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Running             0          3s    10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Running             0          2s    10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Running             0          4s    10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s   1/1     Terminating         0          54m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz   1/1     Terminating         0          54m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Running             0          6s    10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-dqq7s   0/1     Completed           0          55m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   0/1     Completed           0          55m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-dqq7s   0/1     Completed           0          55m   10.244.1.9    k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz   0/1     Completed           0          55m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz   0/1     Completed           0          55m   10.244.1.10   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-bzplz   0/1     Completed           0          55m   10.244.1.10   k8s-worker-1   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          55m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          55m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Running   0          60s   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Running   0          61s   10.244.3.9    k8s-worker-2   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          66m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          66m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Running   0          11m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Running   0          11m   10.244.3.9    k8s-worker-2   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-447dr   1/1     Running   0          70m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running   0          70m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Running   0          15m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Running   0          15m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Running   0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Terminating   0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-xk285   0/1     Pending       0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-xk285   0/1     Pending       0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-447dr   1/1     Running       0          70m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr   1/1     Terminating   0          70m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-8mzlc   0/1     Pending       0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-8mzlc   0/1     Pending       0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285   0/1     ContainerCreating   0          1s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-8mzlc   0/1     ContainerCreating   0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-97nsq   1/1     Terminating         0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr   1/1     Terminating         0          70m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-8mzlc   0/1     Running             0          2s    10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285   0/1     Running             0          4s    10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285   1/1     Running             0          5s    10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-8mzlc   1/1     Running             0          4s    10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Running             0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Terminating         0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-mxgph   0/1     Pending             0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-mxgph   0/1     Pending             0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-5whzb   1/1     Terminating         0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-mxgph   0/1     ContainerCreating   0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Running             0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Terminating         0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-nhkq9   0/1     Pending             0          0s    <none>        <none>         <none>           <none>
+ha-app-549d7d78d-nhkq9   0/1     Pending             0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-sckrp   1/1     Terminating         0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-nhkq9   0/1     ContainerCreating   0          0s    <none>        k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-mxgph   0/1     Running             0          0s    10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9   0/1     Running             0          2s    10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Completed           0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Completed           0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-97nsq   0/1     Completed           0          16m   10.244.3.10   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr   0/1     Completed           0          71m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr   0/1     Completed           0          71m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-447dr   0/1     Completed           0          71m   10.244.3.7    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-mxgph   1/1     Running             0          4s    10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9   1/1     Running             0          4s    10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-5whzb   0/1     Completed           0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Completed           0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Completed           0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-sckrp   0/1     Completed           0          16m   10.244.3.9    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   0/1     Completed           0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-5whzb   0/1     Completed           0          71m   10.244.3.6    k8s-worker-2   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-8mzlc   1/1     Running   0          25s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-mxgph   1/1     Running   0          20s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9   1/1     Running   0          20s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285   1/1     Running   0          26s   10.244.1.14   k8s-worker-1   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                     READY   STATUS    RESTARTS   AGE     IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-549d7d78d-8mzlc   1/1     Running   0          4m29s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-mxgph   1/1     Running   0          4m24s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9   1/1     Running   0          4m24s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285   1/1     Running   0          4m30s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-7nzpq   0/1     Pending   0          0s      <none>        <none>         <none>           <none>
+ha-app-549d7d78d-mxgph    1/1     Terminating   0          6m22s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-7nzpq   0/1     Pending       0          0s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-rmx2w   0/1     Pending       0          0s      <none>        <none>         <none>           <none>
+ha-app-5947464b7c-rmx2w   0/1     Pending       0          0s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-7nzpq   0/1     ContainerCreating   0          1s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-rmx2w   0/1     ContainerCreating   0          1s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-7nzpq   0/1     Running             0          2s      10.244.3.11   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-rmx2w   0/1     Running             0          2s      10.244.3.12   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-mxgph    1/1     Terminating         0          6m25s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-7nzpq   1/1     Running             0          3s      10.244.3.11   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-xk285    1/1     Terminating         0          6m31s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-fg2md   0/1     Pending             0          0s      <none>        <none>         <none>           <none>
+ha-app-5947464b7c-fg2md   0/1     Pending             0          0s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-rmx2w   1/1     Running             0          4s      10.244.3.12   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-fg2md   0/1     ContainerCreating   0          1s      <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-8mzlc    1/1     Terminating         0          6m31s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-fckcj   0/1     Pending             0          0s      <none>        <none>         <none>           <none>
+ha-app-5947464b7c-fckcj   0/1     Pending             0          0s      <none>        k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-fckcj   0/1     ContainerCreating   0          0s      <none>        k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-xk285    1/1     Terminating         0          6m33s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-8mzlc    1/1     Terminating         0          6m32s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-fckcj   0/1     Running             0          1s      10.244.3.14   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-fg2md   0/1     Running             0          2s      10.244.3.13   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-mxgph    0/1     Completed           0          6m29s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-mxgph    0/1     Completed           0          6m30s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-mxgph    0/1     Completed           0          6m30s   10.244.1.18   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-fckcj   1/1     Running             0          5s      10.244.3.14   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-nhkq9    1/1     Terminating         0          6m31s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9    1/1     Terminating         0          6m31s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285    0/1     Completed           0          6m37s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285    0/1     Completed           0          6m38s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-xk285    0/1     Completed           0          6m38s   10.244.1.14   k8s-worker-1   <none>           <none>
+ha-app-5947464b7c-fg2md   1/1     Running             0          7s      10.244.3.13   k8s-worker-2   <none>           <none>
+ha-app-549d7d78d-8mzlc    0/1     Completed           0          6m37s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-8mzlc    0/1     Completed           0          6m39s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-8mzlc    0/1     Completed           0          6m39s   10.244.1.17   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9    0/1     Completed           0          6m37s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9    0/1     Completed           0          6m39s   10.244.1.19   k8s-worker-1   <none>           <none>
+ha-app-549d7d78d-nhkq9    0/1     Completed           0          6m39s   10.244.1.19   k8s-worker-1   <none>           <none>
+^C%                                                                                               macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n zero-downtime-lab -o wide -w
+NAME                      READY   STATUS    RESTARTS   AGE   IP            NODE           NOMINATED NODE   READINESS GATES
+ha-app-5947464b7c-7nzpq   1/1     Running   0          52s   10.244.3.11   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-fckcj   1/1     Running   0          48s   10.244.3.14   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-fg2md   1/1     Running   0          49s   10.244.3.13   k8s-worker-2   <none>           <none>
+ha-app-5947464b7c-rmx2w   1/1     Running   0          52s   10.244.3.12   k8s-worker-2   <none>           <none>
+

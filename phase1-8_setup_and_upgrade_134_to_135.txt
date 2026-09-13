@@ -3454,4 +3454,50 @@ k8s-worker-1   Ready    <none>          15h   v1.35.8   192.168.139.142   <none>
 k8s-worker-2   Ready    <none>          15h   v1.35.8   192.168.139.169   <none>        Ubuntu 24.04.5 LTS   7.0.14-orbstack-00380-ga7e0a2dc9535   containerd://2.3.5
 macbeee@macbees-mac In-House_k8s_setup % kubectl rollout restart deployment ha-app -n zero-downtime-lab
 deployment.apps/ha-app restarted
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -n kube-system -l tier=control-plane -o custom-columns=\
+'NAME:.metadata.name,IMAGE:.spec.containers[0].image,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount'
+NAME                             IMAGE                                             STATUS    RESTARTS
+etcd-k8s-cp                      registry.k8s.io/etcd:3.6.6-0                      Running   2
+kube-apiserver-k8s-cp            registry.k8s.io/kube-apiserver:v1.35.8            Running   2
+kube-controller-manager-k8s-cp   registry.k8s.io/kube-controller-manager:v1.35.8   Running   2
+kube-scheduler-k8s-cp            registry.k8s.io/kube-scheduler:v1.35.8            Running   2
+macbeee@macbees-mac In-House_k8s_setup % kubectl get leases -n kube-system kube-scheduler kube-controller-manager
+NAME                      HOLDER                                        AGE
+kube-scheduler            k8s-cp_5c1b0569-6ed2-42c0-8666-77a7eb3d86a4   19h
+kube-controller-manager   k8s-cp_dd51a369-6db8-4576-94f9-5f91cd136a2c   19h
+macbeee@macbees-mac In-House_k8s_setup % kubectl rollout status deployment/coredns -n kube-system
+kubectl get deployment coredns -n kube-system -o wide
+deployment "coredns" successfully rolled out
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                    SELECTOR
+coredns   2/2     2            2           19h   coredns      registry.k8s.io/coredns/coredns:v1.13.1   k8s-app=kube-dns
+macbeee@macbees-mac In-House_k8s_setup % kubectl get daemonset kube-proxy -n kube-system -o jsonpath='{.spec.template.spec.containers[0].image}'
+echo ""
+registry.k8s.io/kube-proxy:v1.35.8
+macbeee@macbees-mac In-House_k8s_setup % orb -m k8s-cp sudo kubeadm certs check-expiration
+[check-expiration] Reading configuration from the "kubeadm-config" ConfigMap in namespace "kube-system"...
+[check-expiration] Use 'kubeadm init phase upload-config kubeadm --config your-config-file' to re-upload it.
+
+CERTIFICATE                EXPIRES                  RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
+admin.conf                 Sep 13, 2027 11:28 UTC   364d            ca                      no      
+apiserver                  Sep 13, 2027 11:28 UTC   364d            ca                      no      
+apiserver-etcd-client      Sep 13, 2027 11:28 UTC   364d            etcd-ca                 no      
+apiserver-kubelet-client   Sep 13, 2027 11:28 UTC   364d            ca                      no      
+controller-manager.conf    Sep 13, 2027 11:28 UTC   364d            ca                      no      
+etcd-healthcheck-client    Sep 13, 2027 11:28 UTC   364d            etcd-ca                 no      
+etcd-peer                  Sep 13, 2027 11:28 UTC   364d            etcd-ca                 no      
+etcd-server                Sep 13, 2027 11:28 UTC   364d            etcd-ca                 no      
+front-proxy-client         Sep 13, 2027 11:28 UTC   364d            front-proxy-ca          no      
+scheduler.conf             Sep 13, 2027 11:28 UTC   364d            ca                      no      
+super-admin.conf           Sep 13, 2027 11:28 UTC   364d            ca                      no      
+
+CERTIFICATE AUTHORITY   EXPIRES                  RESIDUAL TIME   EXTERNALLY MANAGED
+ca                      Sep 09, 2036 17:37 UTC   9y              no      
+etcd-ca                 Sep 09, 2036 17:37 UTC   9y              no      
+front-proxy-ca          Sep 09, 2036 17:37 UTC   9y              no      
+macbeee@macbees-mac In-House_k8s_setup % kubectl run post-upgrade-probe --image=busybox:1.36 --restart=Never -- rm -f /tmp/test
+kubectl wait --for=condition=Ready pod/post-upgrade-probe --timeout=30s
+kubectl delete pod post-upgrade-probe
+pod/post-upgrade-probe created
+error: timed out waiting for the condition on pods/post-upgrade-probe
+pod "post-upgrade-probe" deleted
 macbeee@macbees-mac In-House_k8s_setup % 

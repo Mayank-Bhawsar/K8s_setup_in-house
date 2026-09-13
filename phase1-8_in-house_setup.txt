@@ -1,0 +1,2737 @@
+macbeee@macbees-mac k8s-cp % ls
+Applications		home			opt			sbin.usr-is-merged	var
+bin			lib			private			srv			Volumes
+bin.usr-is-merged	lib.usr-is-merged	proc			sys
+boot			Library			root			tmp
+dev			media			run			Users
+etc			mnt			sbin			usr
+macbeee@macbees-mac k8s-cp % cd ..
+macbeee@macbees-mac OrbStack % sudo du -sh *
+Password:
+Sorry, try again.
+Password:
+  0B	docker
+du: k8s-cp/etc/credstore: Permission denied
+du: k8s-cp/etc/credstore.encrypted: Permission denied
+du: k8s-cp/etc/ssl/private: Permission denied
+du: k8s-cp/root: Permission denied
+du: k8s-cp/var/cache/apt/archives/partial: Permission denied
+du: k8s-cp/var/cache/ldconfig: Permission denied
+du: k8s-cp/var/cache/private: Permission denied
+du: k8s-cp/var/lib/apt/lists/partial: Permission denied
+du: k8s-cp/var/lib/private: Permission denied
+du: k8s-cp/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial: Permission denied
+du: k8s-cp/var/log/private: Permission denied
+du: k8s-cp/var/spool/cron/crontabs: Permission denied
+du: k8s-cp/var/spool/rsyslog: Permission denied
+728M	k8s-cp
+4.0K	README.txt
+macbeee@macbees-mac OrbStack % clear        
+
+macbeee@macbees-mac OrbStack % brew -h     
+Example usage:
+  brew search TEXT|/REGEX/
+  brew info [FORMULA|CASK...]
+  brew install FORMULA|CASK...
+  brew update
+  brew upgrade [FORMULA|CASK...]
+  brew uninstall FORMULA|CASK...
+  brew list [FORMULA|CASK...]
+
+Troubleshooting:
+  brew config
+  brew doctor
+  brew install --verbose --debug FORMULA|CASK
+
+Contributing:
+  brew create URL [--no-fetch]
+  brew edit [FORMULA|CASK...]
+
+Further help:
+  brew commands
+  brew help [COMMAND]
+  man brew
+  https://docs.brew.sh
+macbeee@macbees-mac OrbStack % brew install kubectl   
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 2 taps (homebrew/core and homebrew/cask).
+==> New Formulae
+cargo-mutants: Inject bugs and see if your tests catch them
+elasticmq: In-memory message queue with an Amazon SQS-compatible interface
+forgejo-runner: Official Actions runner for Forgejo instances
+hister: Self-hosted search engine for your browsing history
+ntfs2btrfs: In-place conversion of NTFS filesystem to Btrfs
+osctrl-mcp: Fast and efficient osquery management
+pnpm@11: Fast, disk space efficient package manager
+rubocop: Ruby static code analyzer and formatter, based on the community Ruby style guide
+snx-rs: Open-source client for Check Point VPN tunnels
+trealla-prolog: Compact and efficient ISO Prolog interpreter written in plain old C
+xevd: Very fast Essential Video Decoder, MPEG-5 EVC (Essential Video Coding)
+==> New Casks
+audacity@3: Multi-track audio editor and recorder
+capsomnia: Utility that keeps your computer awake with the lid closed
+easymac-cleaner: Cleaning, privacy, and system optimisation utility
+flick: Radial command wheel triggered by holding a key and flicking the mouse
+font-clarity-city
+font-isometra
+font-kripa
+font-libre-caslon-condensed
+font-nebula-sans
+font-pyeojin-gothic
+gamemaker@beta: Complete development tool for making 2D games
+homebrew-app: Homebrew's official GUI
+minmaxcal: Minimal menu bar calendar, maximal full-screen notifications
+ollama-binary: Get up and running with large language models locally
+omniwm: Tiling window manager
+open-science: AI research workbench with scientific agents and notebooks
+privacynotes: End-to-end encrypted notes, tasks, files, journal, passwords and bookmark sync
+psysonic: Desktop client for Navidrome and other Subsonic-compatible servers
+stockbit: Indonesian stock trading and analysis platform
+tabularis@nightly: Lightweight database management tool
+workbuddy-ai: AI agent for everyday office work
+workbuddy-cn: AI agent for everyday office work
+wsl-manager: Manage native Linux VMs and remote WSL distros
+zentty: Terminal for agent-driven development
+
+You have 3 outdated formulae installed.
+
+==> Downloading bottle manifests
+✔︎ Bottle Manifest kubernetes-cli (1.37.0)                                                   Downloaded   18.4KB/ 18.4KB
+==> Would install 1 formula:
+kubernetes-cli
+==> Fetching downloads for: kubernetes-cli
+✔︎ Bottle kubernetes-cli (1.37.0)                                                            Downloaded   18.8MB/ 18.8MB
+==> Pouring kubernetes-cli--1.37.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/kubernetes-cli/1.37.0: 261 files, 64.2MB
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+macbeee@macbees-mac OrbStack % kubectl --version
+error: unknown flag: --version
+See 'kubectl --help' for usage.
+macbeee@macbees-mac OrbStack % kubectl version --client
+Client Version: v1.33.9
+Kustomize Version: v5.6.0
+macbeee@macbees-mac OrbStack % kubectl version
+Client Version: v1.33.9
+Kustomize Version: v5.6.0
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+macbeee@macbees-mac OrbStack % cd ..
+macbeee@macbees-mac ~ % orb -m k8s-worker-1
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+macbeee@k8s-worker-1:/Users/macbeee$ hostname -I
+192.168.139.142 fd07:b51a:cc66:0:6429:d4ff:fe58:9940 
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-cp
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+macbeee@k8s-cp:/Users/macbeee$ hostname -I
+192.168.139.197 fd07:b51a:cc66:0:f0aa:d9ff:fee8:ed27 
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-worker-2 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+macbeee@k8s-worker-2:/Users/macbeee$ hostname -I
+192.168.139.169 fd07:b51a:cc66:0:64a1:1fff:febd:4335 
+macbeee@k8s-worker-2:/Users/macbeee$ cat /etc/hosts
+127.0.1.1	k8s-worker-2
+127.0.0.1	localhost
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+
+macbeee@k8s-worker-2:/Users/macbeee$ vi /etc/hosts
+macbeee@k8s-worker-2:/Users/macbeee$ sudo vi /etc/hosts
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-cp      
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+macbeee@k8s-cp:/Users/macbeee$ sudo vi /etc/hosts
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-worker-1
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+macbeee@k8s-worker-1:/Users/macbeee$ sudo vi /etc/hosts
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-cp
+ssh: connect to host k8s-cp port 22: Connection refused
+macbeee@k8s-worker-1:/Users/macbeee$ orb -m k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ vi ~/.bashrc
+macbeee@k8s-cp:/Users/macbeee$ vi ~/.bash_aliases
+macbeee@k8s-cp:/Users/macbeee$ source ~/.bash_aliases
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-cp
+ssh: connect to host k8s-cp port 22: Connection refused
+macbeee@k8s-worker-1:/Users/macbeee$ vi ~/.bash_aliases
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ vi ~/.bash_aliases
+macbeee@k8s-worker-2:/Users/macbeee$ ssh k8s-cp
+ssh: connect to host k8s-cp port 22: Connection refused
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ source ~/.bash_aliases
+macbeee@k8s-worker-2:/Users/macbeee$ ssh k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         527        7477          14         192        7477
+Swap:           9028           0        9028
+macbeee@k8s-cp:/Users/macbeee$ swapon --show
+NAME       TYPE       SIZE USED  PRIO
+/dev/zram0 partition  7.8G   0B 32767
+/dev/vdc   partition 1024M   0B     1
+macbeee@k8s-cp:/Users/macbeee$ sudo swapoff -a
+macbeee@k8s-cp:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         525        7453          14         237        7478
+Swap:              0           0           0
+macbeee@k8s-cp:/Users/macbeee$ sudo vi /etc/fstab
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         515        7467          14         234        7489
+Swap:              0           0           0
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         535        7451          14         229        7469
+Swap:              0           0           0
+macbeee@k8s-worker-2:/Users/macbeee$ sudo vi /etc/fstab
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % orb -m k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         502        7466          14         248        7502
+Swap:              0           0           0
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8004         486        7515          14         197        7517
+Swap:              0           0           0
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+overlay
+br_netfilter
+macbeee@k8s-cp:/Users/macbeee$ cd /etc/modules-load.d/
+macbeee@k8s-cp:/etc/modules-load.d$ ls
+k8s.conf  modules.conf
+macbeee@k8s-cp:/etc/modules-load.d$ ll
+total 8
+drwxr-xr-x 1 root root   40 Sep 12 15:58 ./
+drwxr-xr-x 1 root root 2494 Sep 12 14:59 ../
+-rw-r--r-- 1 root root   21 Sep 12 15:58 k8s.conf
+lrwxrwxrwx 1 root root   10 Jul 28 20:34 modules.conf -> ../modules
+macbeee@k8s-cp:/etc/modules-load.d$ cd ../modules
+-bash: cd: ../modules: Not a directory
+macbeee@k8s-cp:/etc/modules-load.d$ ls
+k8s.conf  modules.conf
+macbeee@k8s-cp:/etc/modules-load.d$ cd ..
+macbeee@k8s-cp:/etc$ ls
+adduser.conf                   dpkg           locale.alias         passwd-       subgid
+alternatives                   e2scrub.conf   locale.conf          profile       subgid-
+apparmor.d                     environment    locale.gen           profile.d     subuid
+apt                            ethertypes     localtime            protocols     subuid-
+bash.bashrc                    fstab          logcheck             python3       sudo.conf
+bindresvport.blacklist         fuse.conf      login.defs           python3.12    sudoers
+binfmt.d                       gai.conf       logrotate.conf       rc0.d         sudoers.d
+ca-certificates                gnutls         logrotate.d          rc1.d         sudo_logsrvd.conf
+ca-certificates.conf           group          lsb-release          rc2.d         supercat
+ca-certificates.conf.dpkg-old  group-         machine-id           rc3.d         sysctl.conf
+console-setup                  gshadow        mime.types           rc4.d         sysctl.d
+credstore                      gshadow-       mke2fs.conf          rc5.d         systemd
+credstore.encrypted            gss            modprobe.d           rc6.d         terminfo
+cron.d                         host.conf      modules              rcS.d         timezone
+cron.daily                     hostname       modules-load.d       resolv.conf   tmpfiles.d
+cron.hourly                    hosts          mtab                 rmt           ubuntu-advantage
+cron.monthly                   init.d         netconfig            rpc           ucf.conf
+crontab                        inputrc        netplan              rsyslog.conf  udev
+cron.weekly                    iproute2       network              rsyslog.d     update-manager
+cron.yearly                    issue          networkd-dispatcher  security      update-motd.d
+dbus-1                         issue.net      networks             selinux       vconsole.conf
+debconf.conf                   kernel         newt                 services      vim
+debian_version                 ldap           nsswitch.conf        shadow        vtrgb
+default                        ld.so.cache    opt                  shadow-       X11
+deluser.conf                   ld.so.conf     os-release           shells        xattr.conf
+depmod.d                       ld.so.conf.d   pam.conf             skel          xdg
+dhcp                           legal          pam.d                ssh
+dhcpcd.conf                    libaudit.conf  passwd               ssl
+macbeee@k8s-cp:/etc$ cat modules
+# /etc/modules is obsolete and has been replaced by /etc/modules-load.d/.
+# Please see modules-load.d(5) and modprobe.d(5) for details.
+#
+# Updating this file still works, but it is undocumented and unsupported.
+macbeee@k8s-cp:/etc$ cd /etc/modules-load.d/
+macbeee@k8s-cp:/etc/modules-load.d$ sudo modprobe overlay
+macbeee@k8s-cp:/etc/modules-load.d$ sudo modprobe br_netfilter
+macbeee@k8s-cp:/etc/modules-load.d$ lsmod | grep -E "overlay|br_netfilter"
+macbeee@k8s-cp:/etc/modules-load.d$ sudo modprobe overlay
+sudo modprobe br_netfilter
+macbeee@k8s-cp:/etc/modules-load.d$ # Check if bridge netfilter sysctl entries exist
+ls /proc/sys/net/bridge/
+bridge-nf-call-arptables  bridge-nf-call-iptables        bridge-nf-filter-vlan-tagged
+bridge-nf-call-ip6tables  bridge-nf-filter-pppoe-tagged  bridge-nf-pass-vlan-input-dev
+macbeee@k8s-cp:/etc/modules-load.d$ grep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /boot/config-$(uname -r) 2>/dev/null || zgrep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /proc/config.gz 2>/dev/null
+CONFIG_BRIDGE_NETFILTER=y
+CONFIG_OVERLAY_FS=y
+CONFIG_OVERLAY_FS_REDIRECT_ALWAYS_FOLLOW=y
+macbeee@k8s-cp:/etc/modules-load.d$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+overlay
+br_netfilter
+macbeee@k8s-worker-1:/Users/macbeee$ sudo modprobe overlay
+sudo modprobe br_netfilter
+macbeee@k8s-worker-1:/Users/macbeee$ lsmod | grep -E "overlay|br_netfilter"
+macbeee@k8s-worker-1:/Users/macbeee$ # Check if bridge netfilter sysctl entries exist
+ls /proc/sys/net/bridge/
+bridge-nf-call-arptables  bridge-nf-call-iptables        bridge-nf-filter-vlan-tagged
+bridge-nf-call-ip6tables  bridge-nf-filter-pppoe-tagged  bridge-nf-pass-vlan-input-dev
+macbeee@k8s-worker-1:/Users/macbeee$ grep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /boot/config-$(uname -r) 2>/dev/null || zgrep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /proc/config.gz 2>/dev/null
+CONFIG_BRIDGE_NETFILTER=y
+CONFIG_OVERLAY_FS=y
+CONFIG_OVERLAY_FS_REDIRECT_ALWAYS_FOLLOW=y
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+overlay
+br_netfilter
+macbeee@k8s-worker-2:/Users/macbeee$ sudo modprobe overlay
+sudo modprobe br_netfilter
+macbeee@k8s-worker-2:/Users/macbeee$ lsmod | grep -E "overlay|br_netfilter"
+macbeee@k8s-worker-2:/Users/macbeee$ # Check if bridge netfilter sysctl entries exist
+ls /proc/sys/net/bridge/
+bridge-nf-call-arptables  bridge-nf-call-iptables        bridge-nf-filter-vlan-tagged
+bridge-nf-call-ip6tables  bridge-nf-filter-pppoe-tagged  bridge-nf-pass-vlan-input-dev
+macbeee@k8s-worker-2:/Users/macbeee$ grep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /boot/config-$(uname -r) 2>/dev/null || zgrep -E "CONFIG_OVERLAY_FS|CONFIG_BRIDGE_NETFILTER" /proc/config.gz 2>/dev/null
+CONFIG_BRIDGE_NETFILTER=y
+CONFIG_OVERLAY_FS=y
+CONFIG_OVERLAY_FS_REDIRECT_ALWAYS_FOLLOW=y
+macbeee@k8s-worker-2:/Users/macbeee$ exi
+-bash: exi: command not found
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+macbeee@k8s-cp:/Users/macbeee$ sudo sysctl --system
+* Applying /etc/sysctl.d/10-bufferbloat.conf ...
+* Applying /etc/sysctl.d/10-console-messages.conf ...
+* Applying /etc/sysctl.d/10-ipv6-privacy.conf ...
+* Applying /etc/sysctl.d/10-kernel-hardening.conf ...
+* Applying /etc/sysctl.d/10-magic-sysrq.conf ...
+* Applying /etc/sysctl.d/10-map-count.conf ...
+* Applying /etc/sysctl.d/10-network-security.conf ...
+* Applying /etc/sysctl.d/10-ptrace.conf ...
+* Applying /etc/sysctl.d/10-zeropage.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /usr/lib/sysctl.d/99-protect-links.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.printk = 4 4 1 7
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.kptr_restrict = 1
+kernel.sysrq = 176
+vm.max_map_count = 1048576
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.all.rp_filter = 2
+kernel.yama.ptrace_scope = 1
+vm.mmap_min_addr = 32768
+kernel.pid_max = 4194304
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+macbeee@k8s-cp:/Users/macbeee$ sysctl net.ipv4.ip_forward net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo sysctl --system
+* Applying /etc/sysctl.d/10-bufferbloat.conf ...
+* Applying /etc/sysctl.d/10-console-messages.conf ...
+* Applying /etc/sysctl.d/10-ipv6-privacy.conf ...
+* Applying /etc/sysctl.d/10-kernel-hardening.conf ...
+* Applying /etc/sysctl.d/10-magic-sysrq.conf ...
+* Applying /etc/sysctl.d/10-map-count.conf ...
+* Applying /etc/sysctl.d/10-network-security.conf ...
+* Applying /etc/sysctl.d/10-ptrace.conf ...
+* Applying /etc/sysctl.d/10-zeropage.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /usr/lib/sysctl.d/99-protect-links.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.printk = 4 4 1 7
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.kptr_restrict = 1
+kernel.sysrq = 176
+vm.max_map_count = 1048576
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.all.rp_filter = 2
+kernel.yama.ptrace_scope = 1
+vm.mmap_min_addr = 32768
+kernel.pid_max = 4194304
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+macbeee@k8s-worker-1:/Users/macbeee$ sysctl net.ipv4.ip_forward net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+macbeee@k8s-worker-2:/Users/macbeee$ sudo sysctl --system
+* Applying /etc/sysctl.d/10-bufferbloat.conf ...
+* Applying /etc/sysctl.d/10-console-messages.conf ...
+* Applying /etc/sysctl.d/10-ipv6-privacy.conf ...
+* Applying /etc/sysctl.d/10-kernel-hardening.conf ...
+* Applying /etc/sysctl.d/10-magic-sysrq.conf ...
+* Applying /etc/sysctl.d/10-map-count.conf ...
+* Applying /etc/sysctl.d/10-network-security.conf ...
+* Applying /etc/sysctl.d/10-ptrace.conf ...
+* Applying /etc/sysctl.d/10-zeropage.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /usr/lib/sysctl.d/99-protect-links.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.printk = 4 4 1 7
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.kptr_restrict = 1
+kernel.sysrq = 176
+vm.max_map_count = 1048576
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.all.rp_filter = 2
+kernel.yama.ptrace_scope = 1
+vm.mmap_min_addr = 32768
+kernel.pid_max = 4194304
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+macbeee@k8s-worker-2:/Users/macbeee$ sysctl net.ipv4.ip_forward net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get update
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Fetched 252 kB in 1s (236 kB/s)                   
+Reading package lists... Done
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get install -y ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+The following additional packages will be installed:
+  dirmngr gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+Suggested packages:
+  pinentry-gnome3 tor parcimonie xloadimage gpg-wks-server scdaemon pinentry-doc
+The following NEW packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+0 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,246 kB of archives.
+After this operation, 6,050 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgconf arm64 2.4.4-2ubuntu17.6 [103 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libksba8 arm64 1.6.6-1build1 [119 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 dirmngr arm64 2.4.4-2ubuntu17.6 [316 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-utils arm64 2.4.4-2ubuntu17.6 [107 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg arm64 2.4.4-2ubuntu17.6 [549 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 pinentry-curses arm64 1.2.1-3ubuntu5 [34.3 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-agent arm64 2.4.4-2ubuntu17.6 [221 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgsm arm64 2.4.4-2ubuntu17.6 [225 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 keyboxd arm64 2.4.4-2ubuntu17.6 [75.9 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg all 2.4.4-2ubuntu17.6 [359 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-l10n all 2.4.4-2ubuntu17.6 [66.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-wks-client arm64 2.4.4-2ubuntu17.6 [69.7 kB]
+Fetched 2,246 kB in 8s (281 kB/s)                                                                      
+Selecting previously unselected package gpgconf.
+(Reading database… 16314 files and directories currently installed.)
+Preparing to unpack …/00-gpgconf_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgconf (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package libksba8:arm64.
+Preparing to unpack …/01-libksba8_1.6.6-1build1_arm64.deb…
+Unpacking libksba8:arm64 (1.6.6-1build1)…
+Selecting previously unselected package dirmngr.
+Preparing to unpack …/02-dirmngr_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking dirmngr (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack …/03-gnupg-utils_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gnupg-utils (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg.
+Preparing to unpack …/04-gpg_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack …/05-pinentry-curses_1.2.1-3ubuntu5_arm64.deb…
+Unpacking pinentry-curses (1.2.1-3ubuntu5)…
+Selecting previously unselected package gpg-agent.
+Preparing to unpack …/06-gpg-agent_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-agent (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpgsm.
+Preparing to unpack …/07-gpgsm_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgsm (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package keyboxd.
+Preparing to unpack …/08-keyboxd_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking keyboxd (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg.
+Preparing to unpack …/09-gnupg_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack …/10-gnupg-l10n_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg-l10n (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack …/11-gpg-wks-client_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-wks-client (2.4.4-2ubuntu17.6)…
+Setting up libksba8:arm64 (1.6.6-1build1)…
+Setting up pinentry-curses (1.2.1-3ubuntu5)…
+Setting up gnupg-l10n (2.4.4-2ubuntu17.6)…
+Setting up gpgconf (2.4.4-2ubuntu17.6)…
+Setting up gpg (2.4.4-2ubuntu17.6)…
+Setting up gnupg-utils (2.4.4-2ubuntu17.6)…
+Setting up gpg-agent (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent.socket → /usr/lib/systemd/user/gpg-agent.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket → /usr/lib/systemd/user/gpg-agent-ssh.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket → /usr/lib/systemd/user/gpg-agent-extra.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket → /usr/lib/systemd/user/gpg-agent-browser.socket.
+Setting up gpgsm (2.4.4-2ubuntu17.6)…
+Setting up dirmngr (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/dirmngr.socket → /usr/lib/systemd/user/dirmngr.socket.
+Setting up keyboxd (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/keyboxd.socket → /usr/lib/systemd/user/keyboxd.socket.
+Setting up gnupg (2.4.4-2ubuntu17.6)…
+Setting up gpg-wks-client (2.4.4-2ubuntu17.6)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-cp:/Users/macbeee$ sudo install -m 0755 -d /etc/apt/keyrings
+macbeee@k8s-cp:/Users/macbeee$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+macbeee@k8s-cp:/Users/macbeee$ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+macbeee@k8s-cp:/Users/macbeee$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get update
+Get:1 https://download.docker.com/linux/ubuntu noble InRelease [48.5 kB]
+Get:2 https://download.docker.com/linux/ubuntu noble/stable arm64 Packages [63.2 kB]
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease                         
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 112 kB in 1s (128 kB/s)
+Reading package lists... Done
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get install -y containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  containerd.io
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 18.9 MB of archives.
+After this operation, 81.9 MB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/ubuntu noble/stable arm64 containerd.io arm64 2.3.5-1~ubuntu.24.04~noble [18.9 MB]
+Fetched 18.9 MB in 2s (10.8 MB/s)         
+Selecting previously unselected package containerd.io.
+(Reading database… 16503 files and directories currently installed.)
+Preparing to unpack …/containerd.io_2.3.5-1~ubuntu.24.04~noble_arm64.deb…
+Unpacking containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Setting up containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+macbeee@k8s-cp:/Users/macbeee$ containerd --version
+containerd containerd v2.3.5 1294c24a7da8e5a793ed378161673abe94118892
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update\
+> ¸^C
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Fetched 252 kB in 1s (242 kB/s)                   
+Reading package lists... Done
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get install -y ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+The following additional packages will be installed:
+  dirmngr gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+Suggested packages:
+  pinentry-gnome3 tor parcimonie xloadimage gpg-wks-server scdaemon pinentry-doc
+The following NEW packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+0 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,246 kB of archives.
+After this operation, 6,050 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgconf arm64 2.4.4-2ubuntu17.6 [103 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libksba8 arm64 1.6.6-1build1 [119 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 dirmngr arm64 2.4.4-2ubuntu17.6 [316 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-utils arm64 2.4.4-2ubuntu17.6 [107 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg arm64 2.4.4-2ubuntu17.6 [549 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 pinentry-curses arm64 1.2.1-3ubuntu5 [34.3 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-agent arm64 2.4.4-2ubuntu17.6 [221 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgsm arm64 2.4.4-2ubuntu17.6 [225 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 keyboxd arm64 2.4.4-2ubuntu17.6 [75.9 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg all 2.4.4-2ubuntu17.6 [359 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-l10n all 2.4.4-2ubuntu17.6 [66.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-wks-client arm64 2.4.4-2ubuntu17.6 [69.7 kB]
+Fetched 2,246 kB in 6s (351 kB/s)                                                                      
+Selecting previously unselected package gpgconf.
+(Reading database… 16314 files and directories currently installed.)
+Preparing to unpack …/00-gpgconf_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgconf (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package libksba8:arm64.
+Preparing to unpack …/01-libksba8_1.6.6-1build1_arm64.deb…
+Unpacking libksba8:arm64 (1.6.6-1build1)…
+Selecting previously unselected package dirmngr.
+Preparing to unpack …/02-dirmngr_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking dirmngr (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack …/03-gnupg-utils_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gnupg-utils (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg.
+Preparing to unpack …/04-gpg_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack …/05-pinentry-curses_1.2.1-3ubuntu5_arm64.deb…
+Unpacking pinentry-curses (1.2.1-3ubuntu5)…
+Selecting previously unselected package gpg-agent.
+Preparing to unpack …/06-gpg-agent_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-agent (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpgsm.
+Preparing to unpack …/07-gpgsm_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgsm (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package keyboxd.
+Preparing to unpack …/08-keyboxd_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking keyboxd (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg.
+Preparing to unpack …/09-gnupg_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack …/10-gnupg-l10n_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg-l10n (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack …/11-gpg-wks-client_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-wks-client (2.4.4-2ubuntu17.6)…
+Setting up libksba8:arm64 (1.6.6-1build1)…
+Setting up pinentry-curses (1.2.1-3ubuntu5)…
+Setting up gnupg-l10n (2.4.4-2ubuntu17.6)…
+Setting up gpgconf (2.4.4-2ubuntu17.6)…
+Setting up gpg (2.4.4-2ubuntu17.6)…
+Setting up gnupg-utils (2.4.4-2ubuntu17.6)…
+Setting up gpg-agent (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent.socket → /usr/lib/systemd/user/gpg-agent.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket → /usr/lib/systemd/user/gpg-agent-ssh.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket → /usr/lib/systemd/user/gpg-agent-extra.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket → /usr/lib/systemd/user/gpg-agent-browser.socket.
+Setting up gpgsm (2.4.4-2ubuntu17.6)…
+Setting up dirmngr (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/dirmngr.socket → /usr/lib/systemd/user/dirmngr.socket.
+Setting up keyboxd (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/keyboxd.socket → /usr/lib/systemd/user/keyboxd.socket.
+Setting up gnupg (2.4.4-2ubuntu17.6)…
+Setting up gpg-wks-client (2.4.4-2ubuntu17.6)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-worker-1:/Users/macbeee$ sudo install -m 0755 -d /etc/apt/keyrings
+macbeee@k8s-worker-1:/Users/macbeee$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+macbeee@k8s-worker-1:/Users/macbeee$ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+macbeee@k8s-worker-1:/Users/macbeee$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update
+Get:1 https://download.docker.com/linux/ubuntu noble InRelease [48.5 kB]
+Get:2 https://download.docker.com/linux/ubuntu noble/stable arm64 Packages [63.2 kB]
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease                         
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 112 kB in 1s (136 kB/s)
+Reading package lists... Done
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get install -y containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  containerd.io
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 18.9 MB of archives.
+After this operation, 81.9 MB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/ubuntu noble/stable arm64 containerd.io arm64 2.3.5-1~ubuntu.24.04~noble [18.9 MB]
+Fetched 18.9 MB in 2s (11.0 MB/s)         
+Selecting previously unselected package containerd.io.
+(Reading database… 16503 files and directories currently installed.)
+Preparing to unpack …/containerd.io_2.3.5-1~ubuntu.24.04~noble_arm64.deb…
+Unpacking containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Setting up containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+macbeee@k8s-worker-1:/Users/macbeee$ containerd --version
+containerd containerd v2.3.5 1294c24a7da8e5a793ed378161673abe94118892
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get update
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Fetched 252 kB in 1s (235 kB/s)                   
+Reading package lists... Done
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get install -y ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+The following additional packages will be installed:
+  dirmngr gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+Suggested packages:
+  pinentry-gnome3 tor parcimonie xloadimage gpg-wks-server scdaemon pinentry-doc
+The following NEW packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpgconf gpgsm keyboxd libksba8
+  pinentry-curses
+0 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,246 kB of archives.
+After this operation, 6,050 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgconf arm64 2.4.4-2ubuntu17.6 [103 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libksba8 arm64 1.6.6-1build1 [119 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 dirmngr arm64 2.4.4-2ubuntu17.6 [316 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-utils arm64 2.4.4-2ubuntu17.6 [107 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg arm64 2.4.4-2ubuntu17.6 [549 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 pinentry-curses arm64 1.2.1-3ubuntu5 [34.3 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-agent arm64 2.4.4-2ubuntu17.6 [221 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpgsm arm64 2.4.4-2ubuntu17.6 [225 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 keyboxd arm64 2.4.4-2ubuntu17.6 [75.9 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg all 2.4.4-2ubuntu17.6 [359 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gnupg-l10n all 2.4.4-2ubuntu17.6 [66.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 gpg-wks-client arm64 2.4.4-2ubuntu17.6 [69.7 kB]
+Fetched 2,246 kB in 6s (369 kB/s)                                                                      
+Selecting previously unselected package gpgconf.
+(Reading database… 16314 files and directories currently installed.)
+Preparing to unpack …/00-gpgconf_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgconf (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package libksba8:arm64.
+Preparing to unpack …/01-libksba8_1.6.6-1build1_arm64.deb…
+Unpacking libksba8:arm64 (1.6.6-1build1)…
+Selecting previously unselected package dirmngr.
+Preparing to unpack …/02-dirmngr_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking dirmngr (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack …/03-gnupg-utils_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gnupg-utils (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg.
+Preparing to unpack …/04-gpg_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack …/05-pinentry-curses_1.2.1-3ubuntu5_arm64.deb…
+Unpacking pinentry-curses (1.2.1-3ubuntu5)…
+Selecting previously unselected package gpg-agent.
+Preparing to unpack …/06-gpg-agent_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-agent (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpgsm.
+Preparing to unpack …/07-gpgsm_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpgsm (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package keyboxd.
+Preparing to unpack …/08-keyboxd_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking keyboxd (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg.
+Preparing to unpack …/09-gnupg_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack …/10-gnupg-l10n_2.4.4-2ubuntu17.6_all.deb…
+Unpacking gnupg-l10n (2.4.4-2ubuntu17.6)…
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack …/11-gpg-wks-client_2.4.4-2ubuntu17.6_arm64.deb…
+Unpacking gpg-wks-client (2.4.4-2ubuntu17.6)…
+Setting up libksba8:arm64 (1.6.6-1build1)…
+Setting up pinentry-curses (1.2.1-3ubuntu5)…
+Setting up gnupg-l10n (2.4.4-2ubuntu17.6)…
+Setting up gpgconf (2.4.4-2ubuntu17.6)…
+Setting up gpg (2.4.4-2ubuntu17.6)…
+Setting up gnupg-utils (2.4.4-2ubuntu17.6)…
+Setting up gpg-agent (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent.socket → /usr/lib/systemd/user/gpg-agent.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket → /usr/lib/systemd/user/gpg-agent-ssh.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket → /usr/lib/systemd/user/gpg-agent-extra.socket.
+Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket → /usr/lib/systemd/user/gpg-agent-browser.socket.
+Setting up gpgsm (2.4.4-2ubuntu17.6)…
+Setting up dirmngr (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/dirmngr.socket → /usr/lib/systemd/user/dirmngr.socket.
+Setting up keyboxd (2.4.4-2ubuntu17.6)…
+Created symlink /etc/systemd/user/sockets.target.wants/keyboxd.socket → /usr/lib/systemd/user/keyboxd.socket.
+Setting up gnupg (2.4.4-2ubuntu17.6)…
+Setting up gpg-wks-client (2.4.4-2ubuntu17.6)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-worker-2:/Users/macbeee$ sudo install -m 0755 -d /etc/apt/keyrings
+macbeee@k8s-worker-2:/Users/macbeee$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+macbeee@k8s-worker-2:/Users/macbeee$ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+macbeee@k8s-worker-2:/Users/macbeee$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get update
+Get:1 https://download.docker.com/linux/ubuntu noble InRelease [48.5 kB]
+Get:2 https://download.docker.com/linux/ubuntu noble/stable arm64 Packages [63.2 kB]
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease                         
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 112 kB in 1s (132 kB/s)
+Reading package lists... Done
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get install -y containerd.io
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  containerd.io
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 18.9 MB of archives.
+After this operation, 81.9 MB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/ubuntu noble/stable arm64 containerd.io arm64 2.3.5-1~ubuntu.24.04~noble [18.9 MB]
+Fetched 18.9 MB in 2s (10.1 MB/s)         
+Selecting previously unselected package containerd.io.
+(Reading database… 16503 files and directories currently installed.)
+Preparing to unpack …/containerd.io_2.3.5-1~ubuntu.24.04~noble_arm64.deb…
+Unpacking containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Setting up containerd.io (2.3.5-1~ubuntu.24.04~noble)…
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+macbeee@k8s-worker-2:/Users/macbeee$ containerd --version
+containerd containerd v2.3.5 1294c24a7da8e5a793ed378161673abe94118892
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ sudo mkdir -p /etc/containerd
+macbeee@k8s-cp:/Users/macbeee$ containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+macbeee@k8s-cp:/Users/macbeee$ sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+macbeee@k8s-cp:/Users/macbeee$ grep -n "SystemdCgroup" /etc/containerd/config.toml
+90:            SystemdCgroup = true
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo mkdir -p /etc/containerd
+macbeee@k8s-worker-1:/Users/macbeee$ containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+macbeee@k8s-worker-1:/Users/macbeee$ sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+macbeee@k8s-worker-1:/Users/macbeee$ grep -n "SystemdCgroup" /etc/containerd/config.toml
+90:            SystemdCgroup = true
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo mkdir -p /etc/containerd
+macbeee@k8s-worker-2:/Users/macbeee$ containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+macbeee@k8s-worker-2:/Users/macbeee$ sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+macbeee@k8s-worker-2:/Users/macbeee$ grep -n "SystemdCgroup" /etc/containerd/config.toml
+90:            SystemdCgroup = true
+macbeee@k8s-worker-2:/Users/macbeee$ cat /etc/containerd/config.toml
+version = 4
+root = '/var/lib/containerd'
+state = '/run/containerd'
+temp = ''
+disabled_plugins = []
+required_plugins = []
+oom_score = 0
+imports = ['/etc/containerd/conf.d/*.toml']
+
+[debug]
+  level = ''
+  format = ''
+  log_trace_id = false
+
+[plugins]
+  [plugins.'io.containerd.cri.v1.images']
+    snapshotter = 'overlayfs'
+    disable_snapshot_annotations = true
+    discard_unpacked_layers = false
+    max_concurrent_downloads = 3
+    concurrent_layer_fetch_buffer = 0
+    image_pull_progress_timeout = '5m0s'
+    image_pull_with_sync_fs = false
+    stats_collect_period = 10
+    use_local_image_pull = false
+
+    [plugins.'io.containerd.cri.v1.images'.pinned_images]
+      sandbox = 'registry.k8s.io/pause:3.10.2'
+
+    [plugins.'io.containerd.cri.v1.images'.registry]
+      config_path = ''
+
+    [plugins.'io.containerd.cri.v1.images'.image_decryption]
+      key_model = 'node'
+
+  [plugins.'io.containerd.cri.v1.runtime']
+    enable_selinux = false
+    selinux_category_range = 1024
+    max_container_log_line_size = 16384
+    disable_apparmor = false
+    restrict_oom_score_adj = false
+    disable_proc_mount = false
+    unset_seccomp_profile = ''
+    tolerate_missing_hugetlb_controller = true
+    disable_hugetlb_controller = true
+    device_ownership_from_security_context = false
+    ignore_image_defined_volumes = false
+    netns_mounts_under_state_dir = false
+    enable_unprivileged_ports = true
+    enable_unprivileged_icmp = true
+    enable_cdi = true
+    cdi_spec_dirs = ['/etc/cdi', '/var/run/cdi']
+    drain_exec_sync_io_timeout = '0s'
+    ignore_deprecation_warnings = []
+    stats_collect_period = ''
+    stats_retention_period = ''
+    enable_criu = true
+    enable_experimental_restore_via_create = false
+
+    [plugins.'io.containerd.cri.v1.runtime'.containerd]
+      default_runtime_name = 'runc'
+      ignore_blockio_not_enabled_errors = false
+      ignore_rdt_not_enabled_errors = false
+
+      [plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes]
+        [plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runc]
+          runtime_type = 'io.containerd.runc.v2'
+          runtime_path = ''
+          pod_annotations = []
+          container_annotations = []
+          privileged_without_host_devices = false
+          privileged_without_host_devices_all_devices_allowed = false
+          cgroup_writable = false
+          base_runtime_spec = ''
+          cni_conf_dir = ''
+          cni_max_conf_num = 0
+          snapshotter = ''
+          sandboxer = 'podsandbox'
+          io_type = ''
+
+          [plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runc.options]
+            BinaryName = ''
+            CriuImagePath = ''
+            CriuWorkPath = ''
+            IoGid = 0
+            IoUid = 0
+            NoNewKeyring = false
+            Root = ''
+            ShimCgroup = ''
+            SystemdCgroup = true
+
+    [plugins.'io.containerd.cri.v1.runtime'.cni]
+      bin_dir = ''
+      bin_dirs = ['/opt/cni/bin']
+      conf_dir = '/etc/cni/net.d'
+      max_conf_num = 1
+      setup_serially = false
+      conf_template = ''
+      ip_pref = ''
+      use_internal_loopback = false
+
+  [plugins.'io.containerd.differ.v1.erofs']
+    mkfs_options = []
+    enable_tar_index = false
+    enable_dmverity = false
+
+  [plugins.'io.containerd.gc.v1.scheduler']
+    pause_threshold = 0.02
+    deletion_threshold = 0
+    mutation_threshold = 100
+    schedule_delay = '0s'
+    startup_delay = '100ms'
+
+  [plugins.'io.containerd.grpc.v1.cri']
+    disable_tcp_service = true
+    stream_server_address = '127.0.0.1'
+    stream_server_port = '0'
+    stream_idle_timeout = '4h0m0s'
+    enable_tls_streaming = false
+
+    [plugins.'io.containerd.grpc.v1.cri'.x509_key_pair_streaming]
+      tls_cert_file = ''
+      tls_key_file = ''
+
+  [plugins.'io.containerd.image-verifier.v1.bindir']
+    bin_dir = '/opt/containerd/image-verifier/bin'
+    max_verifiers = 10
+    per_verifier_timeout = '10s'
+
+  [plugins.'io.containerd.internal.v1.opt']
+    path = '/opt/containerd'
+
+  [plugins.'io.containerd.internal.v1.tracing']
+
+  [plugins.'io.containerd.metadata.v1.bolt']
+    content_sharing_policy = 'shared'
+    no_sync = false
+
+  [plugins.'io.containerd.metrics.v1.grpc-prometheus']
+    grpc_histogram = false
+
+  [plugins.'io.containerd.monitor.container.v1.restart']
+    interval = '10s'
+
+  [plugins.'io.containerd.monitor.task.v1.cgroups']
+    no_prometheus = false
+
+  [plugins.'io.containerd.mount-handler.v1.erofs']
+
+  [plugins.'io.containerd.nri.v1.nri']
+    disable = false
+    socket_path = '/var/run/nri/nri.sock'
+    plugin_path = '/opt/nri/plugins'
+    plugin_config_path = '/etc/nri/conf.d'
+    plugin_registration_timeout = '5s'
+    plugin_request_timeout = '2s'
+    disable_connections = false
+
+    [plugins.'io.containerd.nri.v1.nri'.default_validator]
+      enable = false
+      reject_oci_hook_adjustment = false
+      reject_runtime_default_seccomp_adjustment = false
+      reject_unconfined_seccomp_adjustment = false
+      reject_custom_seccomp_adjustment = false
+      reject_namespace_adjustment = false
+      reject_sysctl_adjustment = false
+      required_plugins = []
+      tolerate_missing_plugins_annotation = ''
+
+  [plugins.'io.containerd.runtime.v2.task']
+    platforms = ['linux/arm64/v8']
+
+  [plugins.'io.containerd.server.v1.debug']
+    address = ''
+    uid = 0
+    gid = 0
+
+  [plugins.'io.containerd.server.v1.grpc']
+    address = '/run/containerd/containerd.sock'
+    uid = 501
+    gid = 501
+    max_recv_message_size = 16777216
+    max_send_message_size = 16777216
+
+  [plugins.'io.containerd.server.v1.grpc-tcp']
+    address = ''
+    tls_ca = ''
+    tls_cert = ''
+    tls_key = ''
+    tls_common_name = ''
+    max_recv_message_size = 16777216
+    max_send_message_size = 16777216
+
+  [plugins.'io.containerd.server.v1.metrics']
+    address = ''
+
+  [plugins.'io.containerd.server.v1.ttrpc']
+    address = '/run/containerd/containerd.sock.ttrpc'
+    uid = 501
+    gid = 501
+
+  [plugins.'io.containerd.service.v1.diff-service']
+    default = ['walking']
+    sync_fs = false
+
+  [plugins.'io.containerd.service.v1.tasks-service']
+    blockio_config_file = ''
+    rdt_config_file = ''
+
+  [plugins.'io.containerd.shim.v1.manager']
+    env = []
+    socket_dir = ''
+
+  [plugins.'io.containerd.snapshotter.v1.blockfile']
+    root_path = ''
+    scratch_file = ''
+    fs_type = ''
+    mount_options = []
+    recreate_scratch = false
+
+  [plugins.'io.containerd.snapshotter.v1.btrfs']
+    root_path = ''
+
+  [plugins.'io.containerd.snapshotter.v1.devmapper']
+    root_path = ''
+    pool_name = ''
+    base_image_size = ''
+    async_remove = false
+    discard_blocks = false
+    fs_type = ''
+    fs_options = ''
+
+  [plugins.'io.containerd.snapshotter.v1.erofs']
+    root_path = ''
+    ovl_mount_options = []
+    enable_fsverity = false
+    set_immutable = false
+    default_size = ''
+    dmverity_mode = ''
+
+  [plugins.'io.containerd.snapshotter.v1.native']
+    root_path = ''
+
+  [plugins.'io.containerd.snapshotter.v1.overlayfs']
+    root_path = ''
+    upperdir_label = false
+    sync_remove = false
+    slow_chown = false
+    mount_options = []
+
+  [plugins.'io.containerd.snapshotter.v1.zfs']
+    root_path = ''
+
+  [plugins.'io.containerd.tracing.processor.v1.otlp']
+
+  [plugins.'io.containerd.transfer.v1.local']
+    max_concurrent_downloads = 3
+    concurrent_layer_fetch_buffer = 0
+    max_concurrent_uploaded_layers = 3
+    check_platform_supported = false
+    config_path = ''
+    max_concurrent_unpacks = 1
+
+[cgroup]
+  path = ''
+
+[timeouts]
+  'io.containerd.timeout.bolt.open' = '0s'
+  'io.containerd.timeout.cri.defercleanup' = '1m0s'
+  'io.containerd.timeout.metrics.shimstats' = '2s'
+  'io.containerd.timeout.shim.cleanup' = '5s'
+  'io.containerd.timeout.shim.load' = '5s'
+  'io.containerd.timeout.shim.shutdown' = '3s'
+  'io.containerd.timeout.task.state' = '2s'
+
+[stream_processors]
+  [stream_processors.'io.containerd.ocicrypt.decoder.v1.tar']
+    accepts = ['application/vnd.oci.image.layer.v1.tar+encrypted']
+    returns = 'application/vnd.oci.image.layer.v1.tar'
+    path = 'ctd-decoder'
+    args = ['--decryption-keys-path', '/etc/containerd/ocicrypt/keys']
+    env = ['OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf']
+
+  [stream_processors.'io.containerd.ocicrypt.decoder.v1.tar.gzip']
+    accepts = ['application/vnd.oci.image.layer.v1.tar+gzip+encrypted']
+    returns = 'application/vnd.oci.image.layer.v1.tar+gzip'
+    path = 'ctd-decoder'
+    args = ['--decryption-keys-path', '/etc/containerd/ocicrypt/keys']
+    env = ['OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf']
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl restart containerd
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl enable containerd
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl status containerd --no-pager
+● containerd.service - containerd container runtime
+     Loaded: loaded (/usr/lib/systemd/system/containerd.service; enabled; preset: enabled)
+    Drop-In: /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: active (running) since Sat 2026-09-12 18:45:51 IST; 12s ago
+       Docs: https://containerd.io
+   Main PID: 3065 (containerd)
+      Tasks: 14
+     Memory: 46.0M (peak: 46.0M)
+        CPU: 134ms
+     CGroup: /system.slice/containerd.service
+             └─3065 /usr/bin/containerd
+
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440598791+05:30" level=info ms…ver.v1
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440664791+05:30" level=info ms…ver.v1
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440703124+05:30" level=info ms…ttp.v1
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440791208+05:30" level=info ms…ver.v1
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440822749+05:30" level=info ms…ver.v1
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440875291+05:30" level=info ms….ttrpc
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.440911624+05:30" level=info ms…id=501
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.441011499+05:30" level=info ms…d.sock
+Sep 12 18:45:51 k8s-cp containerd[3065]: time="2026-09-12T18:45:51.441055874+05:30" level=info ms…7394s"
+Sep 12 18:45:51 k8s-cp systemd[1]: Started containerd.service - containerd container runtime.
+Hint: Some lines were ellipsized, use -l to show in full.
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo systemctl restart containerd
+macbeee@k8s-worker-1:/Users/macbeee$ sudo systemctl enable containerd
+macbeee@k8s-worker-1:/Users/macbeee$ sudo systemctl status containerd --no-pager
+● containerd.service - containerd container runtime
+     Loaded: loaded (/usr/lib/systemd/system/containerd.service; enabled; preset: enabled)
+    Drop-In: /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: active (running) since Sat 2026-09-12 18:46:42 IST; 26s ago
+       Docs: https://containerd.io
+   Main PID: 3036 (containerd)
+      Tasks: 12
+     Memory: 55.5M (peak: 55.5M)
+        CPU: 167ms
+     CGroup: /system.slice/containerd.service
+             └─3036 /usr/bin/containerd
+
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.984616212+05:30" level=i…erver"
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.984627545+05:30" level=i…h NRI"
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.984640003+05:30" level=i…up..."
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.984644753+05:30" level=i…ns..."
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.984658962+05:30" level=i…state"
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.985040920+05:30" level=i….ttrpc
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.985649921+05:30" level=i…id=501
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.985672337+05:30" level=i…d.sock
+Sep 12 18:46:42 k8s-worker-1 containerd[3036]: time="2026-09-12T18:46:42.985698712+05:30" level=i…7467s"
+Sep 12 18:46:42 k8s-worker-1 systemd[1]: Started containerd.service - containerd container runtime.
+Hint: Some lines were ellipsized, use -l to show in full.
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo systemctl restart containerd
+macbeee@k8s-worker-2:/Users/macbeee$ sudo systemctl enable containerd
+macbeee@k8s-worker-2:/Users/macbeee$ sudo systemctl status containerd --no-pager
+● containerd.service - containerd container runtime
+     Loaded: loaded (/usr/lib/systemd/system/containerd.service; enabled; preset: enabled)
+    Drop-In: /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: active (running) since Sat 2026-09-12 18:47:41 IST; 33s ago
+       Docs: https://containerd.io
+   Main PID: 2915 (containerd)
+      Tasks: 13
+     Memory: 45.9M (peak: 45.9M)
+        CPU: 125ms
+     CGroup: /system.slice/containerd.service
+             └─2915 /usr/bin/containerd
+
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.428764177+05:30" level=i…ver.v1
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.428845677+05:30" level=i…ver.v1
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.428883802+05:30" level=i…ttp.v1
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.428948594+05:30" level=i…ver.v1
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.428995427+05:30" level=i…ver.v1
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.429058844+05:30" level=i….ttrpc
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.429103428+05:30" level=i…id=501
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.429145845+05:30" level=i…d.sock
+Sep 12 18:47:41 k8s-worker-2 containerd[2915]: time="2026-09-12T18:47:41.429183886+05:30" level=i…3556s"
+Sep 12 18:47:41 k8s-worker-2 systemd[1]: Started containerd.service - containerd container runtime.
+Hint: Some lines were ellipsized, use -l to show in full.
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ nc 127.0.0.1 6443 -zv -w 2
+nc: connect to 127.0.0.1 port 6443 (tcp) failed: Connection refused
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+gnupg is already the newest version (2.4.4-2ubuntu17.6).
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3,970 B of archives.
+After this operation, 36.9 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 apt-transport-https all 2.8.3 [3,970 B]
+Fetched 3,970 B in 0s (10.7 kB/s)        
+Selecting previously unselected package apt-transport-https.
+(Reading database… 16517 files and directories currently installed.)
+Preparing to unpack …/apt-transport-https_2.8.3_all.deb…
+Unpacking apt-transport-https (2.8.3)…
+Setting up apt-transport-https (2.8.3)…
+macbeee@k8s-cp:/Users/macbeee$ sudo mkdir -p -m 755 /etc/apt/keyrings
+macbeee@k8s-cp:/Users/macbeee$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.34/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-cp:/Users/macbeee$ sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-cp:/Users/macbeee$ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease                                     
+Get:2 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease [1,230 B]
+Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  Packages [16.8 kB]
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 18.0 kB in 1s (21.4 kB/s)
+Reading package lists... Done
+macbeee@k8s-cp:/Users/macbeee$ apt-cache madison kubeadm
+   kubeadm | 1.34.11-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.10-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.9-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.8-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.7-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.6-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.5-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.4-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.3-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+gnupg is already the newest version (2.4.4-2ubuntu17.6).
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3,970 B of archives.
+After this operation, 36.9 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 apt-transport-https all 2.8.3 [3,970 B]
+Fetched 3,970 B in 0s (10.3 kB/s)        
+Selecting previously unselected package apt-transport-https.
+(Reading database… 16517 files and directories currently installed.)
+Preparing to unpack …/apt-transport-https_2.8.3_all.deb…
+Unpacking apt-transport-https (2.8.3)…
+Setting up apt-transport-https (2.8.3)…
+macbeee@k8s-worker-1:/Users/macbeee$ sudo mkdir -p -m 755 /etc/apt/keyrings
+macbeee@k8s-worker-1:/Users/macbeee$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.34/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-worker-1:/Users/macbeee$ sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-worker-1:/Users/macbeee$ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Get:2 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease [1,230 B]
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  Packages [16.8 kB]
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 18.0 kB in 1s (21.0 kB/s)
+Reading package lists... Done
+macbeee@k8s-worker-1:/Users/macbeee$ apt-cache madison kubeadm
+   kubeadm | 1.34.11-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.10-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.9-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.8-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.7-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.6-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.5-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.4-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.3-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20260601~24.04.1).
+curl is already the newest version (8.5.0-2ubuntu10.13).
+gnupg is already the newest version (2.4.4-2ubuntu17.6).
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3,970 B of archives.
+After this operation, 36.9 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 apt-transport-https all 2.8.3 [3,970 B]
+Fetched 3,970 B in 0s (10.7 kB/s)        
+Selecting previously unselected package apt-transport-https.
+(Reading database… 16517 files and directories currently installed.)
+Preparing to unpack …/apt-transport-https_2.8.3_all.deb…
+Unpacking apt-transport-https (2.8.3)…
+Setting up apt-transport-https (2.8.3)…
+macbeee@k8s-worker-2:/Users/macbeee$ sudo mkdir -p -m 755 /etc/apt/keyrings
+macbeee@k8s-worker-2:/Users/macbeee$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.34/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-worker-2:/Users/macbeee$ sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+macbeee@k8s-worker-2:/Users/macbeee$ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.34/deb/ /
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease                                     
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease                             
+Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease [1,230 B]
+Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  Packages [16.8 kB]
+Hit:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Fetched 18.0 kB in 1s (22.0 kB/s)
+Reading package lists... Done
+macbeee@k8s-worker-2:/Users/macbeee$ apt-cache madison kubeadm
+   kubeadm | 1.34.11-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.10-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.9-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.8-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.7-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.6-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.5-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.4-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.3-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+   kubeadm | 1.34.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.34/deb  Packages
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:3 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-get install -y kubelet kubeadm kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  iptables kubernetes-cni libip4tc2 libip6tc2 libjansson4 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 nftables
+Suggested packages:
+  firewalld
+The following NEW packages will be installed:
+  iptables kubeadm kubectl kubelet kubernetes-cni libip4tc2 libip6tc2 libjansson4
+  libnetfilter-conntrack3 libnfnetlink0 libnftables1 libnftnl11 nftables
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 70.4 MB of archives.
+After this operation, 289 MB of additional disk space will be used.
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip4tc2 arm64 1.8.10-3ubuntu2 [23.4 kB]
+Get:1 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubeadm 1.34.11-1.1 [10.9 MB]
+Get:3 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubectl 1.34.11-1.1 [10.1 MB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip6tc2 arm64 1.8.10-3ubuntu2 [23.7 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnfnetlink0 arm64 1.0.2-2build1 [14.7 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnetfilter-conntrack3 arm64 1.0.9-6build1 [45.6 kB]
+Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubernetes-cni 1.7.1-1.1 [37.3 MB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnftnl11 arm64 1.2.6-2build1 [66.2 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 iptables arm64 1.8.10-3ubuntu2 [388 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjansson4 arm64 2.14-2build2 [34.4 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libnftables1 arm64 1.0.9-1ubuntu0.1 [352 kB]
+Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubelet 1.34.11-1.1 [11.1 MB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 nftables arm64 1.0.9-1ubuntu0.1 [70.0 kB]
+Fetched 70.4 MB in 8s (8,906 kB/s)                                                                     
+Selecting previously unselected package libip4tc2:arm64.
+(Reading database… 16521 files and directories currently installed.)
+Preparing to unpack …/00-libip4tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libip6tc2:arm64.
+Preparing to unpack …/01-libip6tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libnfnetlink0:arm64.
+Preparing to unpack …/02-libnfnetlink0_1.0.2-2build1_arm64.deb…
+Unpacking libnfnetlink0:arm64 (1.0.2-2build1)…
+Selecting previously unselected package libnetfilter-conntrack3:arm64.
+Preparing to unpack …/03-libnetfilter-conntrack3_1.0.9-6build1_arm64.deb…
+Unpacking libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Selecting previously unselected package libnftnl11:arm64.
+Preparing to unpack …/04-libnftnl11_1.2.6-2build1_arm64.deb…
+Unpacking libnftnl11:arm64 (1.2.6-2build1)…
+Selecting previously unselected package iptables.
+Preparing to unpack …/05-iptables_1.8.10-3ubuntu2_arm64.deb…
+Unpacking iptables (1.8.10-3ubuntu2)…
+Selecting previously unselected package libjansson4:arm64.
+Preparing to unpack …/06-libjansson4_2.14-2build2_arm64.deb…
+Unpacking libjansson4:arm64 (2.14-2build2)…
+Selecting previously unselected package libnftables1:arm64.
+Preparing to unpack …/07-libnftables1_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package nftables.
+Preparing to unpack …/08-nftables_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking nftables (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package kubeadm.
+Preparing to unpack …/09-kubeadm_1.34.11-1.1_arm64.deb…
+Unpacking kubeadm (1.34.11-1.1)…
+Selecting previously unselected package kubectl.
+Preparing to unpack …/10-kubectl_1.34.11-1.1_arm64.deb…
+Unpacking kubectl (1.34.11-1.1)…
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack …/11-kubernetes-cni_1.7.1-1.1_arm64.deb…
+Unpacking kubernetes-cni (1.7.1-1.1)…
+Selecting previously unselected package kubelet.
+Preparing to unpack …/12-kubelet_1.34.11-1.1_arm64.deb…
+Unpacking kubelet (1.34.11-1.1)…
+Setting up libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up kubeadm (1.34.11-1.1)…
+Setting up libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up libnftnl11:arm64 (1.2.6-2build1)…
+Setting up libjansson4:arm64 (2.14-2build2)…
+Setting up kubectl (1.34.11-1.1)…
+Setting up libnfnetlink0:arm64 (1.0.2-2build1)…
+Setting up kubernetes-cni (1.7.1-1.1)…
+Setting up libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Setting up nftables (1.0.9-1ubuntu0.1)…
+Setting up libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Setting up iptables (1.8.10-3ubuntu2)…
+update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+Setting up kubelet (1.34.11-1.1)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-cp:/Users/macbeee$ sudo apt-mark hold kubelet kubeadm kubectl
+kubelet set on hold.
+kubeadm set on hold.
+kubectl set on hold.
+macbeee@k8s-cp:/Users/macbeee$ kubeadm version -o short
+v1.34.11
+macbeee@k8s-cp:/Users/macbeee$ kubectl version --client=true
+Client Version: v1.34.11
+Kustomize Version: v5.7.1
+macbeee@k8s-cp:/Users/macbeee$ apt-mark showhold
+kubeadm
+kubectl
+kubelet
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-get install -y kubelet kubeadm kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  iptables kubernetes-cni libip4tc2 libip6tc2 libjansson4 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 nftables
+Suggested packages:
+  firewalld
+The following NEW packages will be installed:
+  iptables kubeadm kubectl kubelet kubernetes-cni libip4tc2 libip6tc2 libjansson4
+  libnetfilter-conntrack3 libnfnetlink0 libnftables1 libnftnl11 nftables
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 70.4 MB of archives.
+After this operation, 289 MB of additional disk space will be used.
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip4tc2 arm64 1.8.10-3ubuntu2 [23.4 kB]
+Get:1 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubeadm 1.34.11-1.1 [10.9 MB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip6tc2 arm64 1.8.10-3ubuntu2 [23.7 kB] 
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnfnetlink0 arm64 1.0.2-2build1 [14.7 kB]
+Get:3 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubectl 1.34.11-1.1 [10.1 MB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnetfilter-conntrack3 arm64 1.0.9-6build1 [45.6 kB]
+Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubernetes-cni 1.7.1-1.1 [37.3 MB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnftnl11 arm64 1.2.6-2build1 [66.2 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 iptables arm64 1.8.10-3ubuntu2 [388 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjansson4 arm64 2.14-2build2 [34.4 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libnftables1 arm64 1.0.9-1ubuntu0.1 [352 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 nftables arm64 1.0.9-1ubuntu0.1 [70.0 kB]
+Get:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubelet 1.34.11-1.1 [11.1 MB]
+Fetched 70.4 MB in 7s (9,913 kB/s)                                                                     
+Selecting previously unselected package libip4tc2:arm64.
+(Reading database… 16521 files and directories currently installed.)
+Preparing to unpack …/00-libip4tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libip6tc2:arm64.
+Preparing to unpack …/01-libip6tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libnfnetlink0:arm64.
+Preparing to unpack …/02-libnfnetlink0_1.0.2-2build1_arm64.deb…
+Unpacking libnfnetlink0:arm64 (1.0.2-2build1)…
+Selecting previously unselected package libnetfilter-conntrack3:arm64.
+Preparing to unpack …/03-libnetfilter-conntrack3_1.0.9-6build1_arm64.deb…
+Unpacking libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Selecting previously unselected package libnftnl11:arm64.
+Preparing to unpack …/04-libnftnl11_1.2.6-2build1_arm64.deb…
+Unpacking libnftnl11:arm64 (1.2.6-2build1)…
+Selecting previously unselected package iptables.
+Preparing to unpack …/05-iptables_1.8.10-3ubuntu2_arm64.deb…
+Unpacking iptables (1.8.10-3ubuntu2)…
+Selecting previously unselected package libjansson4:arm64.
+Preparing to unpack …/06-libjansson4_2.14-2build2_arm64.deb…
+Unpacking libjansson4:arm64 (2.14-2build2)…
+Selecting previously unselected package libnftables1:arm64.
+Preparing to unpack …/07-libnftables1_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package nftables.
+Preparing to unpack …/08-nftables_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking nftables (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package kubeadm.
+Preparing to unpack …/09-kubeadm_1.34.11-1.1_arm64.deb…
+Unpacking kubeadm (1.34.11-1.1)…
+Selecting previously unselected package kubectl.
+Preparing to unpack …/10-kubectl_1.34.11-1.1_arm64.deb…
+Unpacking kubectl (1.34.11-1.1)…
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack …/11-kubernetes-cni_1.7.1-1.1_arm64.deb…
+Unpacking kubernetes-cni (1.7.1-1.1)…
+Selecting previously unselected package kubelet.
+Preparing to unpack …/12-kubelet_1.34.11-1.1_arm64.deb…
+Unpacking kubelet (1.34.11-1.1)…
+Setting up libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up kubeadm (1.34.11-1.1)…
+Setting up libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up libnftnl11:arm64 (1.2.6-2build1)…
+Setting up libjansson4:arm64 (2.14-2build2)…
+Setting up kubectl (1.34.11-1.1)…
+Setting up libnfnetlink0:arm64 (1.0.2-2build1)…
+Setting up kubernetes-cni (1.7.1-1.1)…
+Setting up libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Setting up nftables (1.0.9-1ubuntu0.1)…
+Setting up libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Setting up iptables (1.8.10-3ubuntu2)…
+update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+Setting up kubelet (1.34.11-1.1)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-worker-1:/Users/macbeee$ sudo apt-mark hold kubelet kubeadm kubectl
+kubelet set on hold.
+kubeadm set on hold.
+kubectl set on hold.
+macbeee@k8s-worker-1:/Users/macbeee$ kubeadm version -o short
+v1.34.11
+macbeee@k8s-worker-1:/Users/macbeee$ kubectl version --client=true
+Client Version: v1.34.11
+Kustomize Version: v5.7.1
+macbeee@k8s-worker-1:/Users/macbeee$ apt-mark showhold
+kubeadm
+kubectl
+kubelet
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:5 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists... Done
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-get install -y kubelet kubeadm kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  iptables kubernetes-cni libip4tc2 libip6tc2 libjansson4 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 nftables
+Suggested packages:
+  firewalld
+The following NEW packages will be installed:
+  iptables kubeadm kubectl kubelet kubernetes-cni libip4tc2 libip6tc2 libjansson4
+  libnetfilter-conntrack3 libnfnetlink0 libnftables1 libnftnl11 nftables
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 70.4 MB of archives.
+After this operation, 289 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip4tc2 arm64 1.8.10-3ubuntu2 [23.4 kB]
+Get:2 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubeadm 1.34.11-1.1 [10.9 MB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libip6tc2 arm64 1.8.10-3ubuntu2 [23.7 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnfnetlink0 arm64 1.0.2-2build1 [14.7 kB]
+Get:3 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubectl 1.34.11-1.1 [10.1 MB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnetfilter-conntrack3 arm64 1.0.9-6build1 [45.6 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libnftnl11 arm64 1.2.6-2build1 [66.2 kB]
+Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubernetes-cni 1.7.1-1.1 [37.3 MB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 iptables arm64 1.8.10-3ubuntu2 [388 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libjansson4 arm64 2.14-2build2 [34.4 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libnftables1 arm64 1.0.9-1ubuntu0.1 [352 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 nftables arm64 1.0.9-1ubuntu0.1 [70.0 kB]
+Get:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.34/deb  kubelet 1.34.11-1.1 [11.1 MB]
+Fetched 70.4 MB in 8s (9,346 kB/s)                                                                     
+Selecting previously unselected package libip4tc2:arm64.
+(Reading database… 16521 files and directories currently installed.)
+Preparing to unpack …/00-libip4tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libip6tc2:arm64.
+Preparing to unpack …/01-libip6tc2_1.8.10-3ubuntu2_arm64.deb…
+Unpacking libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Selecting previously unselected package libnfnetlink0:arm64.
+Preparing to unpack …/02-libnfnetlink0_1.0.2-2build1_arm64.deb…
+Unpacking libnfnetlink0:arm64 (1.0.2-2build1)…
+Selecting previously unselected package libnetfilter-conntrack3:arm64.
+Preparing to unpack …/03-libnetfilter-conntrack3_1.0.9-6build1_arm64.deb…
+Unpacking libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Selecting previously unselected package libnftnl11:arm64.
+Preparing to unpack …/04-libnftnl11_1.2.6-2build1_arm64.deb…
+Unpacking libnftnl11:arm64 (1.2.6-2build1)…
+Selecting previously unselected package iptables.
+Preparing to unpack …/05-iptables_1.8.10-3ubuntu2_arm64.deb…
+Unpacking iptables (1.8.10-3ubuntu2)…
+Selecting previously unselected package libjansson4:arm64.
+Preparing to unpack …/06-libjansson4_2.14-2build2_arm64.deb…
+Unpacking libjansson4:arm64 (2.14-2build2)…
+Selecting previously unselected package libnftables1:arm64.
+Preparing to unpack …/07-libnftables1_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package nftables.
+Preparing to unpack …/08-nftables_1.0.9-1ubuntu0.1_arm64.deb…
+Unpacking nftables (1.0.9-1ubuntu0.1)…
+Selecting previously unselected package kubeadm.
+Preparing to unpack …/09-kubeadm_1.34.11-1.1_arm64.deb…
+Unpacking kubeadm (1.34.11-1.1)…
+Selecting previously unselected package kubectl.
+Preparing to unpack …/10-kubectl_1.34.11-1.1_arm64.deb…
+Unpacking kubectl (1.34.11-1.1)…
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack …/11-kubernetes-cni_1.7.1-1.1_arm64.deb…
+Unpacking kubernetes-cni (1.7.1-1.1)…
+Selecting previously unselected package kubelet.
+Preparing to unpack …/12-kubelet_1.34.11-1.1_arm64.deb…
+Unpacking kubelet (1.34.11-1.1)…
+Setting up libip4tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up kubeadm (1.34.11-1.1)…
+Setting up libip6tc2:arm64 (1.8.10-3ubuntu2)…
+Setting up libnftnl11:arm64 (1.2.6-2build1)…
+Setting up libjansson4:arm64 (2.14-2build2)…
+Setting up kubectl (1.34.11-1.1)…
+Setting up libnfnetlink0:arm64 (1.0.2-2build1)…
+Setting up kubernetes-cni (1.7.1-1.1)…
+Setting up libnftables1:arm64 (1.0.9-1ubuntu0.1)…
+Setting up nftables (1.0.9-1ubuntu0.1)…
+Setting up libnetfilter-conntrack3:arm64 (1.0.9-6build1)…
+Setting up iptables (1.8.10-3ubuntu2)…
+update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+Setting up kubelet (1.34.11-1.1)…
+Processing triggers for libc-bin (2.39-0ubuntu8.9)…
+macbeee@k8s-worker-2:/Users/macbeee$ sudo apt-mark hold kubelet kubeadm kubectl
+kubelet set on hold.
+kubeadm set on hold.
+kubectl set on hold.
+macbeee@k8s-worker-2:/Users/macbeee$ kubeadm version -o short
+v1.34.11
+macbeee@k8s-worker-2:/Users/macbeee$ kubectl version --client=true
+Client Version: v1.34.11
+Kustomize Version: v5.7.1
+macbeee@k8s-worker-2:/Users/macbeee$ apt-mark showhold
+kubeadm
+kubectl
+kubelet
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl enable --now kubelet
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl status kubelet --no-pager
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; preset: enabled)
+    Drop-In: /usr/lib/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+             /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2026-09-12 20:24:40 IST; 6s ago
+       Docs: https://kubernetes.io/docs/
+    Process: 4810 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS (code=exited, status=1/FAILURE)
+   Main PID: 4810 (code=exited, status=1/FAILURE)
+        CPU: 205ms
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ sudo systemctl enable --now kubelet
+macbeee@k8s-worker-1:/Users/macbeee$ sudo systemctl status kubelet --no-pager
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; preset: enabled)
+    Drop-In: /usr/lib/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+             /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2026-09-12 20:26:39 IST; 4s ago
+       Docs: https://kubernetes.io/docs/
+    Process: 4807 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS (code=exited, status=1/FAILURE)
+   Main PID: 4807 (code=exited, status=1/FAILURE)
+        CPU: 118ms
+
+Sep 12 20:26:39 k8s-worker-1 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo systemctl enable --now kubelet
+macbeee@k8s-worker-2:/Users/macbeee$ sudo systemctl status kubelet --no-pager
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; preset: enabled)
+    Drop-In: /usr/lib/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+             /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: activating (auto-restart) (Result: exit-code) since Sat 2026-09-12 20:27:34 IST; 4s ago
+       Docs: https://kubernetes.io/docs/
+    Process: 4718 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS (code=exited, status=1/FAILURE)
+   Main PID: 4718 (code=exited, status=1/FAILURE)
+        CPU: 117ms
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ 
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ ip -4 addr show eth0
+2: eth0@if9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000 link-netnsid 0
+    inet 192.168.139.197/24 metric 100 brd 192.168.139.255 scope global dynamic eth0
+       valid_lft 57982sec preferred_lft 57982sec
+macbeee@k8s-cp:/Users/macbeee$ sudo kubeadm config images pull --kubernetes-version=v1.34.0
+[config/images] Pulled registry.k8s.io/kube-apiserver:v1.34.0
+[config/images] Pulled registry.k8s.io/kube-controller-manager:v1.34.0
+[config/images] Pulled registry.k8s.io/kube-scheduler:v1.34.0
+[config/images] Pulled registry.k8s.io/kube-proxy:v1.34.0
+[config/images] Pulled registry.k8s.io/coredns/coredns:v1.12.1
+[config/images] Pulled registry.k8s.io/pause:3.10.1
+[config/images] Pulled registry.k8s.io/etcd:3.6.5-0
+macbeee@k8s-cp:/Users/macbeee$ sudo kubeadm init --apiserver-advertise-address=192.168.139.197/24 \
+> --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.34.0
+error: couldn't use "192.168.139.197/24" as "apiserver-advertise-address", must be ipv4 or ipv6 address
+To see the stack trace of this error execute with --v=5 or higher
+macbeee@k8s-cp:/Users/macbeee$ sudo kubeadm init --apiserver-advertise-address=192.168.139.197 --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.34.0
+[init] Using Kubernetes version: v1.34.0
+[preflight] Running pre-flight checks
+	[WARNING SystemVerification]: missing optional cgroups: hugetlb
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [k8s-cp kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.139.197]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [k8s-cp localhost] and IPs [192.168.139.197 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [k8s-cp localhost] and IPs [192.168.139.197 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "super-admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/instance-config.yaml"
+[patches] Applied patch of type "application/strategic-merge-patch+json" to target "kubeletconfiguration"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests"
+[kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 395.835µs
+[control-plane-check] Waiting for healthy control plane components. This can take up to 4m0s
+[control-plane-check] Checking kube-apiserver at https://192.168.139.197:6443/livez
+[control-plane-check] Checking kube-controller-manager at https://127.0.0.1:10257/healthz
+[control-plane-check] Checking kube-scheduler at https://127.0.0.1:10259/livez
+[control-plane-check] kube-controller-manager is healthy after 2.857175ms
+[control-plane-check] kube-scheduler is healthy after 3.140719ms
+[control-plane-check] kube-apiserver is healthy after 1.501830606s
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node k8s-cp as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node k8s-cp as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]
+[bootstrap-token] Using token: hc1jzo.jynyj7jti53tyu7n
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Configured RBAC rules to allow the API server kubelet client certificate to access the kubelet API
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.139.197:6443 --token hc1jzo.jynyj7jti53tyu7n \
+	--discovery-token-ca-cert-hash sha256:b08a5411bb823e070873d9849ceeb368d216c9325f2e8e8aa78dd14d5d0f98e3 
+macbeee@k8s-cp:/Users/macbeee$ ls -l /etc/kubernetes/manifests/
+total 16
+-rw------- 1 root root 2610 Sep 12 23:07 etcd.yaml
+-rw------- 1 root root 3969 Sep 12 23:07 kube-apiserver.yaml
+-rw------- 1 root root 3458 Sep 12 23:07 kube-controller-manager.yaml
+-rw------- 1 root root 1726 Sep 12 23:07 kube-scheduler.yaml
+macbeee@k8s-cp:/Users/macbeee$ sudo systemctl status kubelet --no-pager
+● kubelet.service - kubelet: The Kubernetes Node Agent
+     Loaded: loaded (/usr/lib/systemd/system/kubelet.service; enabled; preset: enabled)
+    Drop-In: /usr/lib/systemd/system/kubelet.service.d
+             └─10-kubeadm.conf
+             /run/systemd/system/service.d
+             └─zzz-lxc-service.conf
+     Active: active (running) since Sat 2026-09-12 23:07:43 IST; 4min 35s ago
+       Docs: https://kubernetes.io/docs/
+   Main PID: 14582 (kubelet)
+      Tasks: 17 (limit: 9641)
+     Memory: 90.5M (peak: 90.6M)
+        CPU: 8.726s
+     CGroup: /system.slice/kubelet.service
+             └─14582 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --k…
+
+Sep 12 23:11:33 k8s-cp kubelet[14582]: E0912 23:11:33.585739   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:11:38 k8s-cp kubelet[14582]: E0912 23:11:38.592774   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:11:43 k8s-cp kubelet[14582]: E0912 23:11:43.596230   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:11:48 k8s-cp kubelet[14582]: E0912 23:11:48.600469   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:11:53 k8s-cp kubelet[14582]: E0912 23:11:53.602290   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:11:58 k8s-cp kubelet[14582]: E0912 23:11:58.605117   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:12:03 k8s-cp kubelet[14582]: E0912 23:12:03.611093   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:12:08 k8s-cp kubelet[14582]: E0912 23:12:08.613109   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:12:13 k8s-cp kubelet[14582]: E0912 23:12:13.615476   14582 kubelet.go:3017] "Container …lized"
+Sep 12 23:12:18 k8s-cp kubelet[14582]: E0912 23:12:18.619466   14582 kubelet.go:3017] "Container …lized"
+Hint: Some lines were ellipsized, use -l to show in full.
+macbeee@k8s-cp:/Users/macbeee$ mkdir -p $HOME/.kube
+macbeee@k8s-cp:/Users/macbeee$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+macbeee@k8s-cp:/Users/macbeee$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+macbeee@k8s-cp:/Users/macbeee$ kubectl get nodes
+NAME     STATUS     ROLES           AGE   VERSION
+k8s-cp   NotReady   control-plane   94m   v1.34.11
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % mkdir -p ~/.kube
+macbeee@macbees-mac ~ % orb -m k8s-cp cat /etc/kubernetes/admin.conf > ~/.kube/config
+macbeee@macbees-mac ~ % cat ~/.kube/config
+cat: /etc/kubernetes/admin.conf: Permission denied
+macbeee@macbees-mac ~ % sudo cat ~/.kube/config
+Password:
+cat: /etc/kubernetes/admin.conf: Permission denied
+macbeee@macbees-mac ~ % sudo cat ~/.kube/config
+cat: /etc/kubernetes/admin.conf: Permission denied
+macbeee@macbees-mac ~ % sudo cat ~/.kube/config
+cat: /etc/kubernetes/admin.conf: Permission denied
+macbeee@macbees-mac ~ % ll ~/.kube
+zsh: command not found: ll
+macbeee@macbees-mac ~ % ls -ltr ~/.kube
+total 8
+-rw-r--r--  1 macbeee  staff  52 13 Sep 00:43 config
+macbeee@macbees-mac ~ % sudo view ~/.kube/config
+macbeee@macbees-mac ~ % chmod 600 ~/.kube/config
+macbeee@macbees-mac ~ % kubectl cluster-info
+error: error loading config file "/Users/macbeee/.kube/config": yaml: mapping values are not allowed in this context
+macbeee@macbees-mac ~ % orb -m k8s-cp cat ~/.kube/config > ~/.kube/config
+macbeee@macbees-mac ~ % chmod 600 ~/.kube/config
+macbeee@macbees-mac ~ % orb -m k8s-cp sudo cat /etc/kubernetes/admin.conf > ~/.kube/config
+macbeee@macbees-mac ~ % chmod 600 ~/.kube/config                                          
+macbeee@macbees-mac ~ % head -n 5 ~/.kube/config
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWkFLZnVnSm44ZFF3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNU1USXhOek15TXpWYUZ3MHpOakE1TURreE56TTNNelZhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURJTnJ5dXowekVDdHQ0VFphWFBFckdoNm1rdm5ITm1JcVh1OCt1dERCQXg0ZjQ3aDdaenAwMWY3Q1MKNStwOVJTU2twTW56ZUpwWnlGRE1TSXVzRWdwcHJsTnl3K2dSZC9XVFZXSjh0YjkzdHdnalUzWmdlcmNBUnplUQpoUllVV1hHNjVnWGdaVkhTS0Y5bW9uMCthWnNzNDQ1U3VuQVpuQi9WVENEOWtKKyt4RHY3TnRVZjhIRmU3REJnClZXNzdBU1lVWGpQYlk0cVpRS0h4VUQ4Y3JjQ0dtRFZoS1Fxb1loZks2K1Q1eHIwdFB5NlJOQUF6UEwwbEFSZGcKVWxmRitHc0U4Q0tCL3pMcExTZ0Nacno0UU9DUGxrVy9IdHdOK0FwME1LUm0yYVNVRS9EL2hGQTc1VE1GVHhKQwpjOTdnNmdzaGxibzBicnhMdFh1d3NtT0I5VmNwQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUMTUzV0RURGZZWDF5UVpZYUdVNytWVGkyRnJqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ1hPNHJQbUY0TQpySmJicjU4M0lEVEpQTGdEQzFGaTM5Mk91Z2hvSE92YXNvbjRNZ2VIMHVmN04zSEhVenpsMzhEem44YmVjR0krCmc5SEJjNFppKzBodjZMMy9xeEFSKy9pbzllWGNQb2NmeGxiOXVmdWx5YmNBMWhKbktnUkRpcUM1bnhQbnZvSlAKeFIrNzduR3FzN1ZncWdrNG9USTUrZFRUT3BkUmlpdEV3aklZY3h1MElCaGE4WUhIL2Q1RmdmdmsrdXZQcEpDSgp0OWkybThHRklIR3RkMVF4Mlo2bHk4UFZoWkl2c0lJYUNiN1ViUnJxTFpaamsydm5RZU9xYmxYc0J6U1NqWVkwCjkvc1E4Z3lqMFY1UFNRdmQyWE5URzZ5ZEtWZjVsZmNUK2ZkSmMxYm5UVnl6OVJpdHNUd2dwMHkxQktkbVZzdmQKdGJrbExnZTg1a09tCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://192.168.139.197:6443
+macbeee@macbees-mac ~ % kubectl cluster-info                                              
+Kubernetes control plane is running at https://192.168.139.197:6443
+CoreDNS is running at https://192.168.139.197:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+macbeee@macbees-mac ~ % kubectl get nodes
+NAME     STATUS     ROLES           AGE    VERSION
+k8s-cp   NotReady   control-plane   102m   v1.34.11
+macbeee@macbees-mac ~ % ssh k8s-cp
+ssh: Could not resolve hostname k8s-cp: nodename nor servname provided, or not known
+macbeee@macbees-mac ~ % orb -m k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ sudo cat ~/.kube/config
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWkFLZnVnSm44ZFF3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNU1USXhOek15TXpWYUZ3MHpOakE1TURreE56TTNNelZhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURJTnJ5dXowekVDdHQ0VFphWFBFckdoNm1rdm5ITm1JcVh1OCt1dERCQXg0ZjQ3aDdaenAwMWY3Q1MKNStwOVJTU2twTW56ZUpwWnlGRE1TSXVzRWdwcHJsTnl3K2dSZC9XVFZXSjh0YjkzdHdnalUzWmdlcmNBUnplUQpoUllVV1hHNjVnWGdaVkhTS0Y5bW9uMCthWnNzNDQ1U3VuQVpuQi9WVENEOWtKKyt4RHY3TnRVZjhIRmU3REJnClZXNzdBU1lVWGpQYlk0cVpRS0h4VUQ4Y3JjQ0dtRFZoS1Fxb1loZks2K1Q1eHIwdFB5NlJOQUF6UEwwbEFSZGcKVWxmRitHc0U4Q0tCL3pMcExTZ0Nacno0UU9DUGxrVy9IdHdOK0FwME1LUm0yYVNVRS9EL2hGQTc1VE1GVHhKQwpjOTdnNmdzaGxibzBicnhMdFh1d3NtT0I5VmNwQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUMTUzV0RURGZZWDF5UVpZYUdVNytWVGkyRnJqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ1hPNHJQbUY0TQpySmJicjU4M0lEVEpQTGdEQzFGaTM5Mk91Z2hvSE92YXNvbjRNZ2VIMHVmN04zSEhVenpsMzhEem44YmVjR0krCmc5SEJjNFppKzBodjZMMy9xeEFSKy9pbzllWGNQb2NmeGxiOXVmdWx5YmNBMWhKbktnUkRpcUM1bnhQbnZvSlAKeFIrNzduR3FzN1ZncWdrNG9USTUrZFRUT3BkUmlpdEV3aklZY3h1MElCaGE4WUhIL2Q1RmdmdmsrdXZQcEpDSgp0OWkybThHRklIR3RkMVF4Mlo2bHk4UFZoWkl2c0lJYUNiN1ViUnJxTFpaamsydm5RZU9xYmxYc0J6U1NqWVkwCjkvc1E4Z3lqMFY1UFNRdmQyWE5URzZ5ZEtWZjVsZmNUK2ZkSmMxYm5UVnl6OVJpdHNUd2dwMHkxQktkbVZzdmQKdGJrbExnZTg1a09tCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://192.168.139.197:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+kind: Config
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lJTVY1SGxxdHFsOEl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNU1USXhOek15TXpWYUZ3MHlOekE1TVRJeE56TTNNelZhTUR3eApIekFkQmdOVkJBb1RGbXQxWW1WaFpHMDZZMngxYzNSbGNpMWhaRzFwYm5NeEdUQVhCZ05WQkFNVEVHdDFZbVZ5CmJtVjBaWE10WVdSdGFXNHdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDeC96K3YKRGIvNVpyUXRHaGpSVzQ5SmpCYTlPWjlCeEV4TDV1cUErWnNUQzF4ZmRVd0RnOHpJNlFzYjA1RXcvZnduSUJJYwppK2hEVWJXUlJacVFWWi9MRXA0YWNsc1FHeWZVVW1LSk02YWNGU0Zha3dyZElheWt2SWxjUnN4bFcrWGJSSlRsClRiVDgwOEJiR1ZUVTREb2szdkUrRDFwNEdpeGVFMVV1enIvNitvZHI1VmxLMnJqNDBFeXlFNEV6dkl4aDcvYzcKQ1lVay9PbnJMZDFUZ0RhY0VTdTBIUzV1bnBvZWV5QUpDOC9RVkZMai9TYmNVekgwcW1WNVMrZlJpTVFqYmVhcgpmVytKdjFSdTdlbURQTG9qbDNpdTdaVnA3R3cwRzBOM2YzTWw0T3lPU2tNK2VSdkpVaFdqTXhkOVNNNXpvSU83Ck42WmxVRW1yV29wWlU2TnZBZ01CQUFHalZqQlVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUsKQmdnckJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRlBYbmRZTk1OOWhmWEpCbApob1pUdjVWT0xZV3VNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUEvaFBZQ0pyYTBkWm9jVWtaeDJpcmQydENlCldxeGRYeGdaZVZ2dG9rZ0Zlb0Z5VTcrY3ZicWtrMldMbURvNTlOckNMcDdJKzFucVdrZERzeHNyVzNwTm54RloKVVY2MzBkcWUrcmtZYzlPZGUvM21SWE9pMDRWckNLeFZGYzZrT2k5YWhTb2JweDVBNVY4QUZEeXF1QWs5aGdQcApZZVBWZFlKNTJIOTJkRG8wTkp0VEFQWWJYUytuazU2OUNURTM5Q3RJbmJ0SktLc25oa0VibHdKdXVmRTBtTDdxCnd6V3JhT0tlVC9VdnV0N241emJOb3RIZmJqTlhVQzVWVWs0ditKeFhwZEdaQVVFdmdwMkRpNkMycGhjYlRDTVkKSis3UTJ4Sm9kSTRDa1BQTGx2cUswNGVwczA5RUZWaUZpd1FId2tlanFRYm1QZ2Z1cHNmaE5xSWN2c1AwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBc2Y4L3J3Mi8rV2EwTFJvWTBWdVBTWXdXdlRtZlFjUk1TK2JxZ1BtYkV3dGNYM1ZNCkE0UE15T2tMRzlPUk1QMzhKeUFTSEl2b1ExRzFrVVdha0ZXZnl4S2VHbkpiRUJzbjFGSmlpVE9tbkJVaFdwTUsKM1NHc3BMeUpYRWJNWlZ2bDIwU1U1VTIwL05QQVd4bFUxT0E2Sk43eFBnOWFlQm9zWGhOVkxzNi8rdnFIYStWWgpTdHE0K05CTXNoT0JNN3lNWWUvM093bUZKUHpwNnkzZFU0QTJuQkVydEIwdWJwNmFIbnNnQ1F2UDBGUlM0LzBtCjNGTXg5S3BsZVV2bjBZakVJMjNtcTMxdmliOVVidTNwZ3p5Nkk1ZDRydTJWYWV4c05CdERkMzl6SmVEc2prcEQKUG5rYnlWSVZvek1YZlVqT2M2Q0R1emVtWlZCSnExcUtXVk9qYndJREFRQUJBb0lCQUNjaERKZm45dWJWdkJBYQpKNUNHaHpaTTFJYmVqdkwvT3lLSWJjN1NrRk9jY0w4UFl4bDJ0T01KMEFaYStSVURFSlp0UjIzOUY1OE03RlEyCkwrZEEyM0xoOGQyd2UvSkxkZk1IOVY5aCttTmZoY2lLZ0ozaUZEald0WCtTbE1aSGNIMUdVMUVoUndNNWJaVFoKT2J2ZVd3blY5TVNHellXUGcyZGU2cC95bFdPUHAwUXV4NERiQ21SbWVoWjI3bno0NEpic0pvUGxHaitZQWZuTQphdHVPc3V6SFVLRlZvblkwZ3JiQmVGQ05sbjdOVmhWdmR6M3pQYk91Z2JOTHoycWFPQWRHSnJIVGRhRlpRemV0CnJlbjVzdjJlYkpUbk94N29GZmphWmNYOUdCM1loSFJuOEZaa3ppNTRIc21LdkxtcEsyK2hLUXJTUEtWVmVpdTAKQXNoRngxRUNnWUVBNnNaUWtCMk5TTmZIekFpbUpGK0p6QkpSYXQ3eEJTS2FwVEtGL3ZGRWRjYkNadjRJaUprRAp6MER0SXFiQlB3MFduRTVSZFRhQWZpREZzMHlaN25nQ1Y5dnMyYUhoNjZNQUhQNitSZEFLNkFBWjI5S1Z4Y2syCnh3WWthQW9ndktkMGl0QW9mTjl3c0xxUkxnSEhMdXU2UFNPOTZQekJwV3Vyc0Y0S3lGVVpxOGtDZ1lFQXdoYmIKMEk3QnJlZU5hRFpvUHZYdmN4SjJhdlAxSXd2cjNNK1NLVEUzV3crV0VaWTNSQVNqMnl3N3JvOUVSanRobDFVeAp5UjBIRXdTemswY09OLzhSb2dvN29LRGZtVFhBSE50TTRINk5NTHhqQWo3Z1VDclRUZGhtT1JUZFByc2NpaXM2Ck90TUNjQUtsdXpJbzNGcW04ZlpEeWl1TytwcUtVN3VNVG5WeEFYY0NnWUVBaWtmK29iUFdTTVpYdHhTTkR6VjYKaTBscXpTQzlJNElyUmd3SklvMW0vbHZ3bXdzYmFhRit2ZThHL1hic3NiOTZ4dHZXWE15YVNDL3pZbFZIQVUrTQpTY1dPcnUwTGpXZjNwQnhqWStsUzB5MWtEYmJ1WW8zT2h0RldWalZJN1BWUXpvWW1vczVVcUxOcTJZZFFrNUZpCm82cE9yRkZibVp4ZWhzWU5ZY3ZHRUFrQ2dZRUFrdkhmaHEwdWNjM0h2OGpCY0RtZkNvNUYzWC9LYnJoTjRLVysKMFRVVDVmdU04TSs4RStFM2RXNnQyT0ZiSFpsRHIrR3VpY2RTWGRISGE0LzJjZXJKbk5jR2dmeUtqV0ttaXJKMgpKOWxvYUNlWkJsQTRZRG1zTlZuTE94aFMwWFcwaTk5aWZMclpNNWl0aFdiYWpNcU5icysyVDFCZk5kamZOYm5lCjVtQUFLTTBDZ1lFQXBRVnZiOHVLMXBoWVNMYnlvWi9jaTNaRlRNWGk3SjdVck00dmFIZk1iVjdOSzJOL1pIL3kKd3NFQTdIZ28wajlOdGdvb2JBNW1jWGZJQnF4ME1FT3ZHakxYZFJRcVUyVkY4MEg0S2FUK0lRVmdFNTlHdU5JTQpBL3NyZ0s4bG1yUDl4c00vYzlZRGI4YjQ0RC9vWkM0YW9wN0lUOE1YUEorWVNjZnpMTVFxL0M0PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % cat ~/.kube/config
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWkFLZnVnSm44ZFF3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNU1USXhOek15TXpWYUZ3MHpOakE1TURreE56TTNNelZhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURJTnJ5dXowekVDdHQ0VFphWFBFckdoNm1rdm5ITm1JcVh1OCt1dERCQXg0ZjQ3aDdaenAwMWY3Q1MKNStwOVJTU2twTW56ZUpwWnlGRE1TSXVzRWdwcHJsTnl3K2dSZC9XVFZXSjh0YjkzdHdnalUzWmdlcmNBUnplUQpoUllVV1hHNjVnWGdaVkhTS0Y5bW9uMCthWnNzNDQ1U3VuQVpuQi9WVENEOWtKKyt4RHY3TnRVZjhIRmU3REJnClZXNzdBU1lVWGpQYlk0cVpRS0h4VUQ4Y3JjQ0dtRFZoS1Fxb1loZks2K1Q1eHIwdFB5NlJOQUF6UEwwbEFSZGcKVWxmRitHc0U4Q0tCL3pMcExTZ0Nacno0UU9DUGxrVy9IdHdOK0FwME1LUm0yYVNVRS9EL2hGQTc1VE1GVHhKQwpjOTdnNmdzaGxibzBicnhMdFh1d3NtT0I5VmNwQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUMTUzV0RURGZZWDF5UVpZYUdVNytWVGkyRnJqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ1hPNHJQbUY0TQpySmJicjU4M0lEVEpQTGdEQzFGaTM5Mk91Z2hvSE92YXNvbjRNZ2VIMHVmN04zSEhVenpsMzhEem44YmVjR0krCmc5SEJjNFppKzBodjZMMy9xeEFSKy9pbzllWGNQb2NmeGxiOXVmdWx5YmNBMWhKbktnUkRpcUM1bnhQbnZvSlAKeFIrNzduR3FzN1ZncWdrNG9USTUrZFRUT3BkUmlpdEV3aklZY3h1MElCaGE4WUhIL2Q1RmdmdmsrdXZQcEpDSgp0OWkybThHRklIR3RkMVF4Mlo2bHk4UFZoWkl2c0lJYUNiN1ViUnJxTFpaamsydm5RZU9xYmxYc0J6U1NqWVkwCjkvc1E4Z3lqMFY1UFNRdmQyWE5URzZ5ZEtWZjVsZmNUK2ZkSmMxYm5UVnl6OVJpdHNUd2dwMHkxQktkbVZzdmQKdGJrbExnZTg1a09tCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://192.168.139.197:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+kind: Config
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURLVENDQWhHZ0F3SUJBZ0lJTVY1SGxxdHFsOEl3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNU1USXhOek15TXpWYUZ3MHlOekE1TVRJeE56TTNNelZhTUR3eApIekFkQmdOVkJBb1RGbXQxWW1WaFpHMDZZMngxYzNSbGNpMWhaRzFwYm5NeEdUQVhCZ05WQkFNVEVHdDFZbVZ5CmJtVjBaWE10WVdSdGFXNHdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDeC96K3YKRGIvNVpyUXRHaGpSVzQ5SmpCYTlPWjlCeEV4TDV1cUErWnNUQzF4ZmRVd0RnOHpJNlFzYjA1RXcvZnduSUJJYwppK2hEVWJXUlJacVFWWi9MRXA0YWNsc1FHeWZVVW1LSk02YWNGU0Zha3dyZElheWt2SWxjUnN4bFcrWGJSSlRsClRiVDgwOEJiR1ZUVTREb2szdkUrRDFwNEdpeGVFMVV1enIvNitvZHI1VmxLMnJqNDBFeXlFNEV6dkl4aDcvYzcKQ1lVay9PbnJMZDFUZ0RhY0VTdTBIUzV1bnBvZWV5QUpDOC9RVkZMai9TYmNVekgwcW1WNVMrZlJpTVFqYmVhcgpmVytKdjFSdTdlbURQTG9qbDNpdTdaVnA3R3cwRzBOM2YzTWw0T3lPU2tNK2VSdkpVaFdqTXhkOVNNNXpvSU83Ck42WmxVRW1yV29wWlU2TnZBZ01CQUFHalZqQlVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUsKQmdnckJnRUZCUWNEQWpBTUJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRlBYbmRZTk1OOWhmWEpCbApob1pUdjVWT0xZV3VNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUEvaFBZQ0pyYTBkWm9jVWtaeDJpcmQydENlCldxeGRYeGdaZVZ2dG9rZ0Zlb0Z5VTcrY3ZicWtrMldMbURvNTlOckNMcDdJKzFucVdrZERzeHNyVzNwTm54RloKVVY2MzBkcWUrcmtZYzlPZGUvM21SWE9pMDRWckNLeFZGYzZrT2k5YWhTb2JweDVBNVY4QUZEeXF1QWs5aGdQcApZZVBWZFlKNTJIOTJkRG8wTkp0VEFQWWJYUytuazU2OUNURTM5Q3RJbmJ0SktLc25oa0VibHdKdXVmRTBtTDdxCnd6V3JhT0tlVC9VdnV0N241emJOb3RIZmJqTlhVQzVWVWs0ditKeFhwZEdaQVVFdmdwMkRpNkMycGhjYlRDTVkKSis3UTJ4Sm9kSTRDa1BQTGx2cUswNGVwczA5RUZWaUZpd1FId2tlanFRYm1QZ2Z1cHNmaE5xSWN2c1AwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBc2Y4L3J3Mi8rV2EwTFJvWTBWdVBTWXdXdlRtZlFjUk1TK2JxZ1BtYkV3dGNYM1ZNCkE0UE15T2tMRzlPUk1QMzhKeUFTSEl2b1ExRzFrVVdha0ZXZnl4S2VHbkpiRUJzbjFGSmlpVE9tbkJVaFdwTUsKM1NHc3BMeUpYRWJNWlZ2bDIwU1U1VTIwL05QQVd4bFUxT0E2Sk43eFBnOWFlQm9zWGhOVkxzNi8rdnFIYStWWgpTdHE0K05CTXNoT0JNN3lNWWUvM093bUZKUHpwNnkzZFU0QTJuQkVydEIwdWJwNmFIbnNnQ1F2UDBGUlM0LzBtCjNGTXg5S3BsZVV2bjBZakVJMjNtcTMxdmliOVVidTNwZ3p5Nkk1ZDRydTJWYWV4c05CdERkMzl6SmVEc2prcEQKUG5rYnlWSVZvek1YZlVqT2M2Q0R1emVtWlZCSnExcUtXVk9qYndJREFRQUJBb0lCQUNjaERKZm45dWJWdkJBYQpKNUNHaHpaTTFJYmVqdkwvT3lLSWJjN1NrRk9jY0w4UFl4bDJ0T01KMEFaYStSVURFSlp0UjIzOUY1OE03RlEyCkwrZEEyM0xoOGQyd2UvSkxkZk1IOVY5aCttTmZoY2lLZ0ozaUZEald0WCtTbE1aSGNIMUdVMUVoUndNNWJaVFoKT2J2ZVd3blY5TVNHellXUGcyZGU2cC95bFdPUHAwUXV4NERiQ21SbWVoWjI3bno0NEpic0pvUGxHaitZQWZuTQphdHVPc3V6SFVLRlZvblkwZ3JiQmVGQ05sbjdOVmhWdmR6M3pQYk91Z2JOTHoycWFPQWRHSnJIVGRhRlpRemV0CnJlbjVzdjJlYkpUbk94N29GZmphWmNYOUdCM1loSFJuOEZaa3ppNTRIc21LdkxtcEsyK2hLUXJTUEtWVmVpdTAKQXNoRngxRUNnWUVBNnNaUWtCMk5TTmZIekFpbUpGK0p6QkpSYXQ3eEJTS2FwVEtGL3ZGRWRjYkNadjRJaUprRAp6MER0SXFiQlB3MFduRTVSZFRhQWZpREZzMHlaN25nQ1Y5dnMyYUhoNjZNQUhQNitSZEFLNkFBWjI5S1Z4Y2syCnh3WWthQW9ndktkMGl0QW9mTjl3c0xxUkxnSEhMdXU2UFNPOTZQekJwV3Vyc0Y0S3lGVVpxOGtDZ1lFQXdoYmIKMEk3QnJlZU5hRFpvUHZYdmN4SjJhdlAxSXd2cjNNK1NLVEUzV3crV0VaWTNSQVNqMnl3N3JvOUVSanRobDFVeAp5UjBIRXdTemswY09OLzhSb2dvN29LRGZtVFhBSE50TTRINk5NTHhqQWo3Z1VDclRUZGhtT1JUZFByc2NpaXM2Ck90TUNjQUtsdXpJbzNGcW04ZlpEeWl1TytwcUtVN3VNVG5WeEFYY0NnWUVBaWtmK29iUFdTTVpYdHhTTkR6VjYKaTBscXpTQzlJNElyUmd3SklvMW0vbHZ3bXdzYmFhRit2ZThHL1hic3NiOTZ4dHZXWE15YVNDL3pZbFZIQVUrTQpTY1dPcnUwTGpXZjNwQnhqWStsUzB5MWtEYmJ1WW8zT2h0RldWalZJN1BWUXpvWW1vczVVcUxOcTJZZFFrNUZpCm82cE9yRkZibVp4ZWhzWU5ZY3ZHRUFrQ2dZRUFrdkhmaHEwdWNjM0h2OGpCY0RtZkNvNUYzWC9LYnJoTjRLVysKMFRVVDVmdU04TSs4RStFM2RXNnQyT0ZiSFpsRHIrR3VpY2RTWGRISGE0LzJjZXJKbk5jR2dmeUtqV0ttaXJKMgpKOWxvYUNlWkJsQTRZRG1zTlZuTE94aFMwWFcwaTk5aWZMclpNNWl0aFdiYWpNcU5icysyVDFCZk5kamZOYm5lCjVtQUFLTTBDZ1lFQXBRVnZiOHVLMXBoWVNMYnlvWi9jaTNaRlRNWGk3SjdVck00dmFIZk1iVjdOSzJOL1pIL3kKd3NFQTdIZ28wajlOdGdvb2JBNW1jWGZJQnF4ME1FT3ZHakxYZFJRcVUyVkY4MEg0S2FUK0lRVmdFNTlHdU5JTQpBL3NyZ0s4bG1yUDl4c00vYzlZRGI4YjQ0RC9vWkM0YW9wN0lUOE1YUEorWVNjZnpMTVFxL0M0PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+macbeee@macbees-mac ~ % kubectl get daemonset -n kube-system
+NAME         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE
+kube-proxy   1         1         1       1            1           kubernetes.io/os=linux   108m
+macbeee@macbees-mac ~ % kubectl get deployment -n kube-system
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+coredns   0/2     2            0           108m
+macbeee@macbees-mac ~ % kubectl get pods -n kube-system -o wide
+NAME                             READY   STATUS    RESTARTS   AGE    IP                NODE     NOMINATED NODE   READINESS GATES
+coredns-66bc5c9577-88jlm         0/1     Pending   0          108m   <none>            <none>   <none>           <none>
+coredns-66bc5c9577-btvwf         0/1     Pending   0          108m   <none>            <none>   <none>           <none>
+etcd-k8s-cp                      1/1     Running   0          109m   192.168.139.197   k8s-cp   <none>           <none>
+kube-apiserver-k8s-cp            1/1     Running   0          109m   192.168.139.197   k8s-cp   <none>           <none>
+kube-controller-manager-k8s-cp   1/1     Running   0          109m   192.168.139.197   k8s-cp   <none>           <none>
+kube-proxy-wmmjw                 1/1     Running   0          108m   192.168.139.197   k8s-cp   <none>           <none>
+kube-scheduler-k8s-cp            1/1     Running   0          109m   192.168.139.197   k8s-cp   <none>           <none>
+macbeee@macbees-mac ~ % kubectl get configmap coredns -n kube-system -o yaml
+apiVersion: v1
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+           max_concurrent 1000
+        }
+        cache 30 {
+           disable success cluster.local
+           disable denial cluster.local
+        }
+        loop
+        reload
+        loadbalance
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-09-12T17:37:43Z"
+  name: coredns
+  namespace: kube-system
+  resourceVersion: "222"
+  uid: 0bd32ce2-0706-4c5d-9499-83937015c046
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % curl -sSL https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml | grep -A 5 -B 2 'net-conf.json'
+      ]
+    }
+  net-conf.json: |
+    {
+      "Network": "10.244.0.0/16",
+      "EnableNFTables": false,
+      "Backend": {
+        "Type": "vxlan"
+macbeee@macbees-mac ~ % kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+namespace/kube-flannel created
+serviceaccount/flannel created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+configmap/kube-flannel-cfg created
+daemonset.apps/kube-flannel-ds created
+macbeee@macbees-mac ~ % kubectl get pods -n kube-flannel -w
+NAME                    READY   STATUS    RESTARTS   AGE
+kube-flannel-ds-xg4k4   1/1     Running   0          34s
+^C%                                                                                                      macbeee@macbees-mac ~ % kubectl get pods -n kube-system -l k8s-app=kube-dns
+NAME                       READY   STATUS    RESTARTS   AGE
+coredns-66bc5c9577-88jlm   1/1     Running   0          153m
+coredns-66bc5c9577-btvwf   1/1     Running   0          153m
+macbeee@macbees-mac ~ % kubectl get nodes -o wide
+NAME     STATUS   ROLES           AGE    VERSION    INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION                        CONTAINER-RUNTIME
+k8s-cp   Ready    control-plane   153m   v1.34.11   192.168.139.197   <none>        Ubuntu 24.04.5 LTS   7.0.14-orbstack-00380-ga7e0a2dc9535   containerd://2.3.5
+macbeee@macbees-mac ~ % orb -m k8s-cp
+macbeee@k8s-cp:/Users/macbeee$ kubectl get node k8s-cp -o jsonpath='{.metadata.annotations.flannel\.alpha\.coreos\.com/pod-cidr}'
+echo ""
+
+macbeee@k8s-cp:/Users/macbeee$ kubectl get node k8s-cp -o jsonpath='{.metadata.annotations.flannel\.alpha\.coreos\.com/pod-cidr}'
+macbeee@k8s-cp:/Users/macbeee$ echo ""
+
+macbeee@k8s-cp:/Users/macbeee$ orb -m k8s-cp ip -brief address show
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0@if9         UP             192.168.139.197/24 metric 100 fd07:b51a:cc66:0:f0aa:d9ff:fee8:ed27/64 fe80::f0aa:d9ff:fee8:ed27/64 
+flannel.1        UNKNOWN        10.244.0.0/32 fe80::e84d:95ff:fe17:f176/64 
+cni0             UP             10.244.0.1/24 fe80::d827:bcff:feba:3cd5/64 
+veth78eb94f1@if2 UP             fe80::b472:e8ff:fed7:7082/64 
+veth1ca6b2fd@if2 UP             fe80::387f:70ff:fe65:f39/64 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ 
+macbeee@k8s-cp:/Users/macbeee$ kubectl get nodes
+NAME     STATUS   ROLES           AGE    VERSION
+k8s-cp   Ready    control-plane   166m   v1.34.11
+macbeee@k8s-cp:/Users/macbeee$ ssh k8s-worker-1
+macbeee@k8s-worker-1:/Users/macbeee$ kubeadm join 192.168.139.197:6443 --token hc1jzo.jynyj7jti53tyu7n \
+        --discovery-token-ca-cert-hash sha256:b08a5411bb823e070873d9849ceeb368d216c9325f2e8e8aa78dd14d5d0f98e3 
+[preflight] Running pre-flight checks
+[preflight] Some fatal errors occurred:
+	[ERROR IsPrivilegedUser]: user is not running as root
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+error: error execution phase preflight: preflight checks failed
+To see the stack trace of this error execute with --v=5 or higher
+macbeee@k8s-worker-1:/Users/macbeee$ sudo kubeadm join 192.168.139.197:6443 --token hc1jzo.jynyj7jti53tyu7n \
+        --discovery-token-ca-cert-hash sha256:b08a5411bb823e070873d9849ceeb368d216c9325f2e8e8aa78dd14d5d0f98e3 
+[preflight] Running pre-flight checks
+	[WARNING SystemVerification]: missing optional cgroups: hugetlb
+[preflight] Reading configuration from the "kubeadm-config" ConfigMap in namespace "kube-system"...
+[preflight] Use 'kubeadm init phase upload-config kubeadm --config your-config-file' to re-upload it.
+W0913 02:03:00.334343   21894 utils.go:69] The recommended value for "bindAddress" in "KubeProxyConfiguration" is: ::; the provided value is: 0.0.0.0
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/instance-config.yaml"
+[patches] Applied patch of type "application/strategic-merge-patch+json" to target "kubeletconfiguration"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 502.343391ms
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
+macbeee@k8s-worker-1:/Users/macbeee$ ssh k8s-worker-2
+macbeee@k8s-worker-2:/Users/macbeee$ sudo kubeadm join 192.168.139.197:6443 --token hc1jzo.jynyj7jti53tyu7n \
+        --discovery-token-ca-cert-hash sha256:b08a5411bb823e070873d9849ceeb368d216c9325f2e8e8aa78dd14d5d0f98e3 
+[preflight] Running pre-flight checks
+	[WARNING SystemVerification]: missing optional cgroups: hugetlb
+[preflight] Reading configuration from the "kubeadm-config" ConfigMap in namespace "kube-system"...
+[preflight] Use 'kubeadm init phase upload-config kubeadm --config your-config-file' to re-upload it.
+W0913 02:03:56.396662   21729 utils.go:69] The recommended value for "bindAddress" in "KubeProxyConfiguration" is: ::; the provided value is: 0.0.0.0
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/instance-config.yaml"
+[patches] Applied patch of type "application/strategic-merge-patch+json" to target "kubeletconfiguration"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 501.975393ms
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
+macbeee@k8s-worker-2:/Users/macbeee$ exit
+logout
+macbeee@k8s-worker-1:/Users/macbeee$ exit
+logout
+macbeee@k8s-cp:/Users/macbeee$ exit
+logout
+macbeee@macbees-mac ~ % kubectl get nodes -owide
+NAME           STATUS   ROLES           AGE    VERSION    INTERNAL-IP       EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION                        CONTAINER-RUNTIME
+k8s-cp         Ready    control-plane   176m   v1.34.11   192.168.139.197   <none>        Ubuntu 24.04.5 LTS   7.0.14-orbstack-00380-ga7e0a2dc9535   containerd://2.3.5
+k8s-worker-1   Ready    <none>          94s    v1.34.11   192.168.139.142   <none>        Ubuntu 24.04.5 LTS   7.0.14-orbstack-00380-ga7e0a2dc9535   containerd://2.3.5
+k8s-worker-2   Ready    <none>          40s    v1.34.11   192.168.139.169   <none>        Ubuntu 24.04.5 LTS   7.0.14-orbstack-00380-ga7e0a2dc9535   containerd://2.3.5
+macbeee@macbees-mac ~ % kubectl get pods -n kube-system -l k8s-app=kube-proxy -o wide
+NAME               READY   STATUS    RESTARTS   AGE    IP                NODE           NOMINATED NODE   READINESS GATES
+kube-proxy-462w6   1/1     Running   0          2m4s   192.168.139.142   k8s-worker-1   <none>           <none>
+kube-proxy-5bw24   1/1     Running   0          70s    192.168.139.169   k8s-worker-2   <none>           <none>
+kube-proxy-wmmjw   1/1     Running   0          177m   192.168.139.197   k8s-cp         <none>           <none>
+macbeee@macbees-mac ~ % kubectl get pods -n kube-flannel -o wide
+NAME                    READY   STATUS    RESTARTS   AGE    IP                NODE           NOMINATED NODE   READINESS GATES
+kube-flannel-ds-2mtz4   1/1     Running   0          2m7s   192.168.139.169   k8s-worker-2   <none>           <none>
+kube-flannel-ds-4jtpl   1/1     Running   0          3m1s   192.168.139.142   k8s-worker-1   <none>           <none>
+kube-flannel-ds-xg4k4   1/1     Running   0          26m    192.168.139.197   k8s-cp         <none>           <none>
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % 
+macbeee@macbees-mac ~ % orb -m k8s-worker-1 df -h /opt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb1       347G  4.9G  342G   2% /
+macbeee@macbees-mac ~ % orb -m k8s-worker-2 df -h /opt
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb1       347G  4.9G  342G   2% /
+macbeee@macbees-mac ~ % curl -sSL https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.30/deploy/local-path-storage.yaml | grep -E "kind:"
+kind: Namespace
+kind: ServiceAccount
+kind: Role
+kind: ClusterRole
+kind: RoleBinding
+  kind: Role
+  - kind: ServiceAccount
+kind: ClusterRoleBinding
+  kind: ClusterRole
+  - kind: ServiceAccount
+kind: Deployment
+kind: StorageClass
+kind: ConfigMap
+    kind: Pod
+macbeee@macbees-mac ~ % kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.30/deploy/local-path-storage.yaml
+namespace/local-path-storage created
+serviceaccount/local-path-provisioner-service-account created
+role.rbac.authorization.k8s.io/local-path-provisioner-role created
+clusterrole.rbac.authorization.k8s.io/local-path-provisioner-role created
+rolebinding.rbac.authorization.k8s.io/local-path-provisioner-bind created
+clusterrolebinding.rbac.authorization.k8s.io/local-path-provisioner-bind created
+deployment.apps/local-path-provisioner created
+storageclass.storage.k8s.io/local-path created
+configmap/local-path-config created
+macbeee@macbees-mac ~ % kubectl get pods -n local-path-storage -o wide
+NAME                                      READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+local-path-provisioner-5f96558fc6-hrdzt   1/1     Running   0          23s   10.244.3.2   k8s-worker-2   <none>           <none>
+macbeee@macbees-mac ~ % kubectl get storageclass
+NAME         PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  41s
+macbeee@macbees-mac ~ % kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+storageclass.storage.k8s.io/local-path patched
+macbeee@macbees-mac ~ % kubectl get storageclass
+NAME                   PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+local-path (default)   rancher.io/local-path   Delete          WaitForFirstConsumer   false                  74s
+macbeee@macbees-mac ~ % pwd
+/Users/macbeee
+macbeee@macbees-mac ~ % cd again 
+macbeee@macbees-mac again % ls
+github-recovery-codes.txt	Projects
+MayankBhawsar_resume.pdf	tmp
+macbeee@macbees-mac again % cd Projects 
+macbeee@macbees-mac Projects % ls
+Causeway		In-House_k8s_setup
+macbeee@macbees-mac Projects % cd In-House_k8s_setup 
+macbeee@macbees-mac In-House_k8s_setup % ls
+Phase 1 - In-house k8s setup.txt
+macbeee@macbees-mac In-House_k8s_setup % rm Phase\ 1\ -\ In-house\ k8s\ setup.txt 
+macbeee@macbees-mac In-House_k8s_setup % ls
+macbeee@macbees-mac In-House_k8s_setup % ls
+Phase 1 - In-house k8s setup.txt	phase1234_in-house_setup.txt
+phase1-2_in-house_setup.txt		phase12345_in-house_setup.txt
+phase123_in-house_setup.txt		Phase123456_in-house_setup.txt
+macbeee@macbees-mac In-House_k8s_setup % cat <<EOF > storage-test.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: local-path-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 128Mi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-test-pod
+spec:
+  containers:
+  - name: test-container
+    image: busybox:1.36
+    command: ["sh", "-c", "echo 'Hello from persistent storage' > /data/test.txt && sleep 3600"]
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /data
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: local-path-pvc
+EOF
+macbeee@macbees-mac In-House_k8s_setup % ls
+Phase 1 - In-house k8s setup.txt	phase12345_in-house_setup.txt
+phase1-2_in-house_setup.txt		Phase123456_in-house_setup.txt
+phase123_in-house_setup.txt		storage-test.yaml
+phase1234_in-house_setup.txt
+macbeee@macbees-mac In-House_k8s_setup % kubectl apply -f storage-test.yaml
+persistentvolumeclaim/local-path-pvc created
+pod/volume-test-pod created
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pvc local-path-pvc
+NAME             STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+local-path-pvc   Pending                                      local-path     <unset>                 7s
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pvc local-path-pvc
+NAME             STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+local-path-pvc   Pending                                      local-path     <unset>                 13s
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods volume-test-pod -o wide
+NAME              READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
+volume-test-pod   0/1     Pending   0          19s   <none>   <none>   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pvc-cc1c572f-36a0-4b0f-960e-e71963e80289   128Mi      RWO            Delete           Bound    default/local-path-pvc   local-path     <unset>                          20s
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pv $(kubectl get pvc local-path-pvc -o jsonpath='{.spec.volumeName}') -o jsonpath='{.spec.nodeAffinity}'
+{"required":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"kubernetes.io/hostname","operator":"In","values":["k8s-worker-1"]}]}]}}%                                                                           macbeee@macbees-mac In-House_k8s_setup % NODE=$(kubectl get pod volume-test-pod -o jsonpath='{.spec.nodeName}')
+echo "Pod is on $NODE"
+Pod is on k8s-worker-1
+macbeee@macbees-mac In-House_k8s_setup % orb -m $NODE sudo ls -la /opt/local-path-provisioner/
+total 0
+drwxr-xr-x 1 root root 126 Sep 13 02:41 .
+drwxr-xr-x 1 root root  98 Sep 13 02:41 ..
+drwxrwxrwx 1 root root  16 Sep 13 02:41 pvc-cc1c572f-36a0-4b0f-960e-e71963e80289_default_local-path-pvc
+macbeee@macbees-mac In-House_k8s_setup % orb -m $NODE pwd                                     
+/Users/macbeee/again/Projects/In-House_k8s_setup
+macbeee@macbees-mac In-House_k8s_setup % orb -m $NODE sudo cat /opt/local-path-provisioner/*/test.txt
+zsh: no matches found: /opt/local-path-provisioner/*/test.txt
+macbeee@macbees-mac In-House_k8s_setup % orb -m k8s-worker-1 sudo cat /opt/local-path-provisioner/*/test.txt
+zsh: no matches found: /opt/local-path-provisioner/*/test.txt
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pod volume-test-pod
+NAME              READY   STATUS    RESTARTS   AGE
+volume-test-pod   1/1     Running   0          4m
+macbeee@macbees-mac In-House_k8s_setup % orb -m k8s-worker-1 'sudo cat /opt/local-path-provisioner/*/test.txt'
+-bash: line 1: sudo cat /opt/local-path-provisioner/*/test.txt: No such file or directory
+macbeee@macbees-mac In-House_k8s_setup % orb -m k8s-worker-1 sudo cat /opt/local-path-provisioner/pvc-cc1c572f-36a0-4b0f-960e-e71963e80289_default_local-path-pvc/test.txt
+Hello from persistent storage
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec volume-test-pod -- cat /data/test.txt
+Hello from persistent storage
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete pod volume-test-pod
+pod "volume-test-pod" deleted
+macbeee@macbees-mac In-House_k8s_setup % cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-test-pod-2
+spec:
+  containers:
+  - name: test-container
+    image: busybox:1.36
+    command: ["sh", "-c", "cat /data/test.txt && sleep 3600"]
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /data
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: local-path-pvc
+EOF
+pod/volume-test-pod-2 created
+macbeee@macbees-mac In-House_k8s_setup % kubectl wait --for=condition=Ready pod/volume-test-pod-2 --timeout=60s
+pod/volume-test-pod-2 condition met
+macbeee@macbees-mac In-House_k8s_setup % kubectl logs volume-test-pod-2
+Hello from persistent storage
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete pod volume-test-pod-2
+pod "volume-test-pod-2" deleted
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pvc-cc1c572f-36a0-4b0f-960e-e71963e80289   128Mi      RWO            Delete           Bound    default/local-path-pvc   local-path     <unset>                          12m
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pvc-cc1c572f-36a0-4b0f-960e-e71963e80289   128Mi      RWO            Delete           Bound    default/local-path-pvc   local-path     <unset>                          13m
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete pv pvc-cc1c572f-36a0-4b0f-960e-e71963e80289
+persistentvolume "pvc-cc1c572f-36a0-4b0f-960e-e71963e80289" deleted
+kubectl get pv 
+
+
+
+¸^C%                                                                                                     macbeee@macbees-mac In-House_k8s_setup % kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pvc-cc1c572f-36a0-4b0f-960e-e71963e80289   128Mi      RWO            Delete           Terminating   default/local-path-pvc   local-path     <unset>                          17m
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete pv pvc-cc1c572f-36a0-4b0f-960e-e71963e80289 
+persistentvolume "pvc-cc1c572f-36a0-4b0f-960e-e71963e80289" deleted
+^C%                                                                                                      macbeee@macbees-mac In-House_k8s_setup % kubectl get pv 
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                    STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pvc-cc1c572f-36a0-4b0f-960e-e71963e80289   128Mi      RWO            Delete           Terminating   default/local-path-pvc   local-path     <unset>                          17m
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % 
+macbeee@macbees-mac In-House_k8s_setup % cat <<EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-check-nginx
+  labels:
+    app: net-check
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: net-check
+  template:
+    metadata:
+      labels:
+        app: net-check
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values: ["net-check"]
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: nginx
+        image: nginx:1.27-alpine
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: net-check-svc
+spec:
+  selector:
+    app: net-check
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+EOF
+deployment.apps/net-check-nginx created
+service/net-check-svc created
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -l app=net-check -o wide
+NAME                               READY   STATUS              RESTARTS   AGE   IP       NODE           NOMINATED NODE   READINESS GATES
+net-check-nginx-7dd5d4db8d-7ww7g   0/1     ContainerCreating   0          7s    <none>   k8s-worker-2   <none>           <none>
+net-check-nginx-7dd5d4db8d-w92vw   0/1     ContainerCreating   0          7s    <none>   k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -l app=net-check -o wide
+NAME                               READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+net-check-nginx-7dd5d4db8d-7ww7g   1/1     Running   0          35s   10.244.3.3   k8s-worker-2   <none>           <none>
+net-check-nginx-7dd5d4db8d-w92vw   1/1     Running   0          35s   10.244.1.5   k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: net-client
+spec:
+  containers:
+  - name: client
+    image: nicolaka/netshoot:latest
+    command: ["sleep", "3600"]
+EOF
+pod/net-client created
+macbeee@macbees-mac In-House_k8s_setup % kubectl wait --for=condition=Ready pod/net-client --timeout=60s
+pod/net-client condition met
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pod net-client -o wide
+NAME         READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+net-client   1/1     Running   0          3m46s   10.244.1.6   k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % kubectl get pods -l app=net-check -o wide
+NAME                               READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+net-check-nginx-7dd5d4db8d-7ww7g   1/1     Running   0          4m51s   10.244.3.3   k8s-worker-2   <none>           <none>
+net-check-nginx-7dd5d4db8d-w92vw   1/1     Running   0          4m51s   10.244.1.5   k8s-worker-1   <none>           <none>
+macbeee@macbees-mac In-House_k8s_setup % TARGET_POD_IP=$(kubectl get pods -l app=net-check -o jsonpath='{.items[0].status.podIP}')
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- ping -c 3 $TARGET_POD_IP
+PING 10.244.3.3 (10.244.3.3) 56(84) bytes of data.
+64 bytes from 10.244.3.3: icmp_seq=1 ttl=62 time=0.370 ms
+64 bytes from 10.244.3.3: icmp_seq=2 ttl=62 time=0.360 ms
+
+--- 10.244.3.3 ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 2054ms
+rtt min/avg/max/mdev = 0.360/0.365/0.370/0.005 ms
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- curl -s -I http://$TARGET_POD_IP
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Sat, 12 Sep 2026 21:38:42 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Wed, 16 Apr 2025 12:55:34 GMT
+Connection: keep-alive
+ETag: "67ffa8c6-267"
+Accept-Ranges: bytes
+
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- curl -s -I http://net-check-svc
+HTTP/1.1 200 OK
+Server: nginx/1.27.5
+Date: Sat, 12 Sep 2026 21:38:55 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Wed, 16 Apr 2025 12:55:34 GMT
+Connection: keep-alive
+ETag: "67ffa8c6-267"
+Accept-Ranges: bytes
+
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- drill net-check-svc
+;; ->>HEADER<<- opcode: QUERY, rcode: NXDOMAIN, id: 2834
+;; flags: qr rd ra ; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0 
+;; QUESTION SECTION:
+;; net-check-svc.	IN	A
+
+;; ANSWER SECTION:
+
+;; AUTHORITY SECTION:
+
+;; ADDITIONAL SECTION:
+
+;; Query time: 25 msec
+;; SERVER: 10.96.0.10
+;; WHEN: Sat Sep 12 21:39:07 2026
+;; MSG SIZE  rcvd: 31
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- drill net-check-svc.default.svc.cluster.local
+;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 6609
+;; flags: qr aa rd ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0 
+;; QUESTION SECTION:
+;; net-check-svc.default.svc.cluster.local.	IN	A
+
+;; ANSWER SECTION:
+net-check-svc.default.svc.cluster.local.	30	IN	A	10.103.111.145
+
+;; AUTHORITY SECTION:
+
+;; ADDITIONAL SECTION:
+
+;; Query time: 1 msec
+;; SERVER: 10.96.0.10
+;; WHEN: Sat Sep 12 21:39:20 2026
+;; MSG SIZE  rcvd: 112
+macbeee@macbees-mac In-House_k8s_setup % kubectl exec net-client -- drill google.com
+;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 60900
+;; flags: qr rd ra ; QUERY: 1, ANSWER: 8, AUTHORITY: 0, ADDITIONAL: 0 
+;; QUESTION SECTION:
+;; google.com.	IN	A
+
+;; ANSWER SECTION:
+google.com.	30	IN	A	142.250.118.102
+google.com.	30	IN	A	142.250.118.101
+google.com.	30	IN	A	192.178.177.102
+google.com.	30	IN	A	142.250.183.238
+google.com.	30	IN	A	192.178.177.139
+google.com.	30	IN	A	192.178.177.138
+google.com.	30	IN	A	192.178.177.101
+google.com.	30	IN	A	142.250.182.142
+
+;; AUTHORITY SECTION:
+
+;; ADDITIONAL SECTION:
+
+;; Query time: 26 msec
+;; SERVER: 10.96.0.10
+;; WHEN: Sat Sep 12 21:39:29 2026
+;; MSG SIZE  rcvd: 236
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete deployment net-check-nginx
+deployment.apps "net-check-nginx" deleted
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete service net-check-svc
+service "net-check-svc" deleted
+macbeee@macbees-mac In-House_k8s_setup % kubectl delete pod net-client
+
+pod "net-client" deleted
+macbeee@macbees-mac In-House_k8s_setup % 
